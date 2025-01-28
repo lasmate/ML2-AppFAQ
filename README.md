@@ -3,8 +3,8 @@
 ## Description
 le projet sera divise en 5 etapes (+1 pour la recete)
 1. Planification utilisant 
-    1. DCU (Diagramme de cas d'utilisation)
-    2. MCD (Model Conceptuel de Donnees)
+    1. [x] DCU (Diagramme de cas d'utilisation)
+    2. [x] MCD (Model Conceptuel de Donnees)
     3. MLD (Model Logique de Donnees)
     4. IHM (Interface Homme Machine)
     5. SITEMAP (Plan du site)
