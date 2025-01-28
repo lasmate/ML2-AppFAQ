@@ -5,22 +5,24 @@ le projet sera divise en 5 etapes (+1 pour la recete)
 1. Planification utilisant 
     1. [x] DCU (Diagramme de cas d'utilisation)
     2. [x] MCD (Model Conceptuel de Donnees)
-    3. MLD (Model Logique de Donnees)
-    4. IHM (Interface Homme Machine)
-    5. SITEMAP (Plan du site)
+    3. [x] MLD (Model Logique de Donnees)
+    4. [ ] IHM (Interface Homme Machine)
+    5. [ ] SITEMAP (Plan du site)
 2. Modélisation
     1. MLD (Model Logique de Donnees)
     2. MDP (Model de Presentation)
     3. lotissement
 3. Developpement Site Statique
     1. HTML
-        - [ ] Connection
-        - [ ] Inscription
-        - [ ] Déconnection
-        - [ ] Liste des messages
-        - [ ] Ajouter une messages
-        - [ ] Modifier un message
-        - [ ] Supprimer un message
+        - [ ] Account
+            - [ ] Connection
+            - [ ] Inscription
+            - [ ] Déconnection
+        - [ ] FAQ
+            - [ ] Liste des messages
+            - [ ] Ajouter une messages
+            - [ ] Modifier un message
+            - [ ] Supprimer un message
     2. CSS
         - [ ] Style general
         - [ ] Style ds pages de connection/inscription/Déconnection
@@ -34,13 +36,15 @@ le projet sera divise en 5 etapes (+1 pour la recete)
         - [ ] Insert
 4. Developpement Site Dynamique
     1. PHP
-        - [ ] Connection
-        - [ ] Inscription
-        - [ ] Déconnection
-        - [ ] Liste des messages
-        - [ ] Ajouter une messages
-        - [ ] Modifier un message
-        - [ ] Supprimer un message
+        - [ ] Account
+            - [ ] Connection
+            - [ ] Inscription
+            - [ ] Déconnection
+        - [ ] FAQ
+            - [ ] Liste des messages
+            - [ ] Ajouter une messages
+            - [ ] Modifier un message
+            - [ ] Supprimer un message
 5. Test et Documentation
     1. Test
         - [ ] Test de connection
