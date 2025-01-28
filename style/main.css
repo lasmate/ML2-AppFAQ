@@ -15,7 +15,7 @@ body{
     display:inline-table;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 5vh;
 }
 .flex-nav{
     display:inline-table;
@@ -23,18 +23,17 @@ body{
     align-items: center;
     margin: 1vh;
     padding: auto;
-    background-color: #333;
-    color: #fff;
+    /*background-color: #333;*/
+    color: #000000;
 }
 .flex-expand-vertical{
-
     flex: 1;
 }
 .flex-nav-account{
     display: none;
     align-items: center;
-    background-color: #333;
-    color: #fff;
+    /*background-color: #333;*/
+    color: #000000;
 }
 .flex-nav:hover .flex-nav-account {
     display: flow-root;
