@@ -4,3 +4,39 @@ html{
     color: #333;
     line-height: 1.5;
 }
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex-container{
+    display:inline-table;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.flex-nav{
+    display:inline-table;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1vh;
+    padding: auto;
+    background-color: #333;
+    color: #fff;
+}
+.flex-expand-vertical{
+
+    flex: 1;
+}
+.flex-nav-account{
+    display: none;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+}
+.flex-nav:hover .flex-nav-account {
+    display: flow-root;
+}
+
