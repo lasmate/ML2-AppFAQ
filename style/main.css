@@ -3,41 +3,61 @@ html{
     font-family: 'Roboto', sans-serif;
     color: #333;
     line-height: 1.5;
+
 }
 
 body{
     margin: 0;
     padding: 0;
+    height: 100vh;
     box-sizing: border-box;
 }
 
+p{
+    margin: 0;
+    padding: 0;
+}
+
+.flex-title{
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    z-index: 1;
+}
+
 .flex-container{
-    position: relative;
+    position: sticky;
     display: flex;
     align-items: flex-start;
     height: 4vh;
-    align-content: flex-start;
+
     flex-direction: row;
     justify-content: flex-end;
+    z-index: 5;
 }
 .flex-nav{
     display: inline-flex;
-    margin: 1vh;
-    padding: auto;
+    padding-bottom: 1vw;
+    padding-top: 1vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
     color: #000000;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
+    border-width: 2px;
+    border-color: #000000;
+    border-style: solid;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
-.flex-expand-vertical{
-    flex: 1;
-}
 .flex-nav-Column{
     display: none;
-    align-items: center;
+    position:inherit;
     /*background-color: #333;*/
     color: #000000;
+    
 }
 .flex-nav:hover .flex-nav-Column {
     display: flow-root;
@@ -45,3 +65,7 @@ body{
 
 }
 
+#FAQ{
+    padding-left: 4vw;
+    padding-right: 4vw;
+}
