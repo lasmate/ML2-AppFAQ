@@ -12,30 +12,36 @@ body{
 }
 
 .flex-container{
-    display:inline-table;
-    justify-content: center;
-    align-items: center;
-    height: 5vh;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    height: 4vh;
+    align-content: flex-start;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 .flex-nav{
-    display:inline-table;
-    justify-content: space-between;
-    align-items: center;
+    display: inline-flex;
     margin: 1vh;
     padding: auto;
-    /*background-color: #333;*/
     color: #000000;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
 }
+
 .flex-expand-vertical{
     flex: 1;
 }
-.flex-nav-account{
+.flex-nav-Column{
     display: none;
     align-items: center;
     /*background-color: #333;*/
     color: #000000;
 }
-.flex-nav:hover .flex-nav-account {
+.flex-nav:hover .flex-nav-Column {
     display: flow-root;
+    justify-content:center;
+
 }
 
