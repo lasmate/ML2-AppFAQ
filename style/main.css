@@ -64,8 +64,30 @@ p{
     justify-content:center;
 
 }
+.flex-menu{
+    border-bottom: #000000;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    margin-top: 15vh;
 
+    z-index:1 ;
+}
+.flex-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    z-index: 1;
+}
 #FAQ{
+    padding-left: 4vw;
+    padding-right: 4vw;
+}
+#Account{
     padding-left: 4vw;
     padding-right: 4vw;
 }
