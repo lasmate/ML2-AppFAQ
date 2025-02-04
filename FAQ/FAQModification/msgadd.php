@@ -11,17 +11,17 @@
     <div class="flex-container">
         <div class="flex-nav"> <a href="index.html">Acceuil</a></div>
         <div class="flex-nav" id="FAQ"><p> FAQ </p>
-                <div class="flex-nav-Column"> <a href="../FAQ/FAQSport1.html">Sport1</a></div>
-                <div class="flex-nav-Column"> <a href="../FAQ/FAQSport2.html">Sport2</a></div>
-                <div class="flex-nav-Column"> <a href="../FAQ/FAQSport3.html">Sport3</a></div>
-                <div class="flex-nav-Column"> <a href="../FAQ/FAQSport4.html">Sport4</a></div>
-        </div>
-        <div class="flex-nav" id="Account"><p> Compte </p> 
-                <div class="flex-nav-Column"> <a href="../Account/inscription.html">Inscription</a></div>
-                <div class="flex-nav-Column"> <a href="../Account/connection.html">Connection</a></div>
-                <div class="flex-nav-Column"> <a href="../Account/deconnection.html">Deconnection</a></div>
-        </div>
+            <div class="flex-nav-Column"> <a href="../../FAQ/FAQSport1.html">Sport1</a></div>
+            <div class="flex-nav-Column"> <a href="../../FAQ/FAQSport2.html">Sport2</a></div>
+            <div class="flex-nav-Column"> <a href="../../FAQ/FAQSport3.html">Sport3</a></div>
+            <div class="flex-nav-Column"> <a href="../../FAQ/FAQSport4.html">Sport4</a></div>
     </div>
+    <div class="flex-nav" id="Account"><p> Compte </p> 
+            <div class="flex-nav-Column"> <a href="../../Account/inscription.html">Inscription</a></div>
+            <div class="flex-nav-Column"> <a href="../../Account/connection.html">Connection</a></div>
+            <div class="flex-nav-Column"> <a href="../../Account/deconnection.html">Deconnection</a></div>
+    </div>
+</div>
 
     <div class="form-container">
         <form action="/submit_question" method="post">
