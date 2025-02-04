@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ML2 FAQ Sport 3</title>
+    <title>FAQ Volley</title>
     <link rel="stylesheet" href="../style/main.css">
 </head>
 <body>
-    <div class="flex-title"> <h1>FAQ Sport 3</h1> </div>
+    <div class="flex-title"> <h1>FAQ Volley</h1> </div>
     <div class="flex-container">
 
         <div class="flex-nav"> <a href="index.php">Acceuil</a></div>
