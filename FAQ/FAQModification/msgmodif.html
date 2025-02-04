@@ -31,7 +31,13 @@
             <label for="details">Details:</label>
             <textarea id="details" name="details" rows="4" required></textarea>
             
-            <button type="submit">Submit</button>
+            <label for="Answer">Réponce</label>
+            <textarea id="additional-details" name="additional-details" rows="4"></textarea>
+            
+            <button type="submit">Valider</button>
+            <button type="button" onclick="document.getElementById('question').value=''; document.getElementById('details').value=''; document.getElementById('additional-details').value='';">Supprimer</button>
+        </form>
+    </div>
         </form>
     </div>
 </body>
