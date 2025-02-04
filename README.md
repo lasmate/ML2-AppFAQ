@@ -6,11 +6,11 @@ le projet sera divise en 5 etapes (+1 pour la recete)
     1. [x] DCU (Diagramme de cas d'utilisation)
     2. [x] MCD (Model Conceptuel de Donnees)
     3. [x] MLD (Model Logique de Donnees)
-    4. [ ] IHM (Interface Homme Machine)
-    5. [ ] SITEMAP (Plan du site)
+    4. [x] IHM (Interface Homme Machine)
+    5. [x] SITEMAP (Plan du site)
 2. Modélisation
-    1. MLD (Model Logique de Donnees)
-    2. MDP (Model de Presentation)
+    1. [x]MLD (Model Logique de Donnees)
+    2. [x]MDP (Model de Presentation)
     3. lotissement
 3. Developpement Site Statique
     1. HTML
@@ -19,12 +19,16 @@ le projet sera divise en 5 etapes (+1 pour la recete)
             - [ ] Inscription
             - [ ] Déconnection
         - [ ] FAQ
-            - [ ] Liste des messages
-            - [ ] Ajouter une messages
-            - [ ] Modifier un message
-            - [ ] Supprimer un message
+            - [-] FAQLigue1
+            - [-] FAQLigue2
+            - [-] FAQLigue3
+            - [-] FAQLigue4
+            - [-] FAQmodif
+                - [ ] Ajouter une messages
+                - [ ] Modifier un message
+                - [ ] Supprimer un message
     2. CSS
-        - [ ] Style general
+        - [-] Style general
         - [ ] Style ds pages de connection/inscription/Déconnection
         - [ ] Style de la liste des messages
     3. JS
