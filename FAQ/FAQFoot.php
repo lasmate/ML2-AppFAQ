@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ML2 FAQ Sport1</title>
+    <title>FAQ Football</title>
     <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+
 </head>
 <body>
-    <div class="flex-title"> <h1>FAQ Sport1</h1> </div>
+    <div class="flex-title"> <h1>FAQ Football</h1> </div>
     <div class="flex-container">
 
         <div class="flex-nav"> <a href="index.php">Acceuil</a></div>

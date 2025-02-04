@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ML2 FAQ Sport 2</title>
+    <title>FAQ Basket</title>
     <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
 </head>
 <body>
-    <div class="flex-title"> <h1>FAQ Sport 2</h1> </div>
+    <div class="flex-title"> <h1>FAQ Basket</h1> </div>
     <div class="flex-container">
 
         <div class="flex-nav"> <a href="index.php">Acceuil</a></div>
@@ -31,7 +32,10 @@
             <h2>Question 1</h2>
             <p>Reponse 1</p>
             <h2>Question 2</h2>
-            <p>Reponse 2</p>
+            <p>Reponse 2</p>                <div class="flex-nav-Column"> <a href="../FAQ/FAQSport1.php">Sport1</a></div>
+                <div class="flex-nav-Column"> <a href="../FAQ/FAQSport2.php">Sport2</a></div>
+                <div class="flex-nav-Column"> <a href="../FAQ/FAQSport3.php">Sport3</a></div>
+                <div class="flex-nav-Column"> <a href="../FAQ/FAQSport4.php">Sport4</a></div>
             <h2>Question 3</h2>
             <p>Reponse 3</p>
             <h2>Question 4</h2>
