@@ -12,7 +12,14 @@
         </div>
         <div class="flex-content">
                 <div class="flex-question">
-                    
+                    <?php
+                        $questions = array("Question 1", "Question 2", "Question 3", "Question 4", "Question 5", "Question 6", "Question 7");
+                        $reponses = array("Reponse 1", "Reponse 2", "Reponse 3", "Reponse 4", "Reponse 5", "Reponse 6", "Reponse 7");
+                        for ($i = 0; $i < count($questions); $i++) {
+                            echo "<h2>".$questions[$i]."</h2>";
+                            echo "<p>".$reponses[$i]."</p>";
+                        }
+                        ?>
                 
 
         </div>
