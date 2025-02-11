@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ Handball</title>
+    <title>Réponso'Ligue</title>
     <link rel="stylesheet" href="../style/main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
 
 </head>
 <body>
-    <div class="flex-title"> <h1>FAQ Football</h1> </div>
+    <div class="flex-title"> <h1>FAQ Handball</h1> </div>
     <div class="flex-container">
 
-        <div class="flex-nav"> <a href="index.php">Acceuil</a></div>
+        <div class="flex-nav"> <a href="../index.php">Acceuil</a></div>
         <div class="flex-nav" id="FAQ"><p> FAQ </p>
                 <div class="flex-nav-Column"> <a href="../FAQ/FAQBask.php">Basket</a></div>
                 <div class="flex-nav-Column"> <a href="../FAQ/FAQFoot.php">Football</a></div>
