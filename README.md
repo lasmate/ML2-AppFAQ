@@ -14,41 +14,41 @@ le projet sera divise en 5 etapes (+1 pour la recete)
     3. lotissement
 3. Developpement Site Statique
     1. HTML
-        - [ ] Account
-            - [ ] Connection
-            - [ ] Inscription
-            - [ ] Déconnection
-        - [ ] FAQ
+        - [-] Account
+            - [-] Connection
+            - [-] Inscription
+            - [-] Déconnection
+        - [-] FAQ
             - [-] FAQLigue1
             - [-] FAQLigue2
             - [-] FAQLigue3
             - [-] FAQLigue4
             - [-] FAQmodif
-                - [ ] Ajouter une messages
-                - [ ] Modifier un message
-                - [ ] Supprimer un message
+                - [x] Ajouter une messages
+                - [x] Modifier un message
+                - [x] Supprimer un message
     2. CSS
         - [-] Style general
-        - [ ] Style ds pages de connection/inscription/Déconnection
-        - [ ] Style de la liste des messages
+        - [-] Style ds pages de connection/inscription/Déconnection
+        - [-] Style de la liste des messages
     3. JS
         - [ ] Verification des champs de connection/inscription
         - [ ] Verification des champs de modification de message
     4. SQL
-        - [ ] Creation de la base de donnees
-        - [ ] Creation des tables
+        - [x] Creation de la base de donnees
+        - [-] Creation des tables
         - [ ] Insert
 4. Developpement Site Dynamique
     1. PHP
-        - [ ] Account
-            - [ ] Connection
-            - [ ] Inscription
-            - [ ] Déconnection
-        - [ ] FAQ
-            - [ ] Liste des messages
-            - [ ] Ajouter une messages
-            - [ ] Modifier un message
-            - [ ] Supprimer un message
+        - [-] Account
+            - [-] Connection
+            - [-] Inscription
+            - [-] Déconnection
+        - [-] FAQ
+            - [-] Liste des messages
+            - [-] Ajouter une messages
+            - [-] Modifier un message
+            - [-] Supprimer un message
 5. Test et Documentation
     1. Test
         - [ ] Test de connection
