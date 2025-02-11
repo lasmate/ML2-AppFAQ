@@ -1,6 +1,6 @@
 <div class="flex-container">
+        <p class='flex-nav' style="text-align: center">nom prenom</p>
     <div class="flex-nav"> <a href="../index.php">Acceuil</a></div>
-    <p class='flex-nav' style="text-align: center">nom prenom</p>
     <div class="flex-nav" id="FAQ"><p> FAQ </p>
             <div class="flex-nav-Column"> <a href="../FAQ/FAQBask.php">Basket</a></div>
             <div class="flex-nav-Column"> <a href="../FAQ/FAQFoot.php">Football</a></div>
