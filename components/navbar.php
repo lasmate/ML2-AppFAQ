@@ -10,6 +10,6 @@
     <div class="flex-nav" id="Account"><p> Compte </p> 
             <div class="flex-nav-Column"> <a href="/Account/inscription.php">Inscription</a></div>
             <div class="flex-nav-Column"> <a href="/Account/connexion.php">Connexion</a></div>
-            <div class="flex-nav-Column"> <a href="/Account/deconnection.php">Deconnection</a></div>
+            <div class="flex-nav-Column"> <a href="/Account/deconnexion.php">Deconnexion</a></div>
     </div>
 </div>
