@@ -11,7 +11,7 @@
     <div class="flex-title"> <h1>FAQ Basket</h1> </div>
     <div class="flex-container">
 
-        <div class="flex-nav"> <a href="index.php">Acceuil</a></div>
+        <div class="flex-nav"> <a href="../index.php">Acceuil</a></div>
         <div class="flex-nav" id="FAQ"><p> FAQ </p>
                 <div class="flex-nav-Column"> <a href="../FAQ/FAQBask.php">Basket</a></div>
                 <div class="flex-nav-Column"> <a href="../FAQ/FAQFoot.php">Football</a></div>
