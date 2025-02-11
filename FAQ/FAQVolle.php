@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/main.css">
-    <title>Réponso'Ligue</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <?php include "../components/header.php"; ?>
+
 </head>
 <body>
     <div class="flex-title"> <h1>FAQ Volley</h1> </div>
