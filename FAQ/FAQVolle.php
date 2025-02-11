@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include "../components/header.php"; ?>
+    <?php include "components/header.php"; ?>
 
 </head>
 <body>
     <div class="flex-title"> <h1>FAQ Volley</h1> </div>
-   <?php include "../components/navbar.php"; ?>
+   <?php include "components/navbar.php"; ?>
     <div class="flex-page">
         <div class="flex-menu">
             <div class="select-sort"> trier</div> 
