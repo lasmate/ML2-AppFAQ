@@ -9,7 +9,7 @@
     </div>
     <div class="flex-nav" id="Account"><p> Compte </p> 
             <div class="flex-nav-Column"> <a href="/Account/inscription.php">Inscription</a></div>
-            <div class="flex-nav-Column"> <a href="/Account/connection.php">Connection</a></div>
+            <div class="flex-nav-Column"> <a href="/Account/connexion.php">Connexion</a></div>
             <div class="flex-nav-Column"> <a href="/Account/deconnection.php">Deconnection</a></div>
     </div>
 </div>
