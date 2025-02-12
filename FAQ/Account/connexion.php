@@ -25,7 +25,67 @@
     </div>
     <div class="flex-page">
 
-
+    <div class="login-box">
+        <form action="login_process.php" method="post">
+        <div class="textbox">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="textbox">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" id="remember" name="remember">
+            <label for="remember">Remember me</label>
+        </div>
+        <div class="button">
+            <button type="submit">Login</button>
+        </div>
+        </form>
+    </div>
+    <style>
+        .login-box {
+        max-width: 40vw;
+        padding: 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        }
+        .textbox {
+        margin-bottom: 20px;
+        }
+        .textbox label {
+        display: block;
+        margin-bottom: 5px;
+        }
+        .textbox input {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        }
+        .checkbox {
+        margin-bottom: 20px;
+        }
+        .button {
+        text-align: center;
+        }
+        .button button {
+        padding: 10px 20px;
+        background: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        }
+        .button button:hover {
+        background: #555;
+        }
+    </style>
 
 
 
