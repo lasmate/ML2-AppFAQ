@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réponso'Ligue</title>
     <link rel="stylesheet" href="../../style/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="../../style/account.csss">
 </head>
 <body>
     <div class="flex-title"> <h1>Inscription</h1> </div>
@@ -52,46 +54,7 @@
         </form>
     </div>
     <style>
-        .login-box {
-        max-width: 40vw;
-        padding: 30px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: #fff;
-        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
-        border-radius: 10px;
-        }
-        .textbox {
-        margin-bottom: 20px;
-        }
-        .textbox label {
-        display: block;
-        margin-bottom: 5px;
-        }
-        .textbox input {
-        width: 100%;
-        padding: 10px;
-        box-sizing: border-box;
-        }
-        .checkbox {
-        margin-bottom: 20px;
-        }
-        .button {
-        text-align: center;
-        }
-        .button button {
-        padding: 10px 20px;
-        background: #333;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-        }
-        .button button:hover {
-        background: #555;
-        }
+        
     </style>
 
 
