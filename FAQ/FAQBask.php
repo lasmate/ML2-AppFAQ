@@ -11,7 +11,7 @@
             <div class="select-sort"> trier</div> 
         </div>
         <div class="flex-content">
-            <?php include "components/questionlist.php"; ?>
+            <?php include "components/Qlist.php"; ?>
         </div>
     </div>
     <?php include 'components/footer.php';?>
