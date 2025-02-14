@@ -37,13 +37,13 @@ p{
             gap: 10px;
             justify-content: center;
             margin-top: 15vh;
-            }
-            .flex-item {
-            background-size: cover;
-            width: calc(50% - 10px);
-            height: 20vh;
-            cursor: pointer;
-            }
+}
+.flex-item {
+background-size: cover;
+width: calc(50% - 10px);
+height: 20vh;
+cursor: pointer;
+}
 
 .flex-title{
     position: absolute;
