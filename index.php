@@ -37,17 +37,17 @@
 
         <style>
             .flex-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 15vh;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+                margin-top: 15vh;
             }
             .flex-item {
-            background-size: cover;
-            width: calc(50% - 10px);
-            height: 20vh;
-            cursor: pointer;
+                background-size: cover;
+                width: calc(50% - 10px);
+                height: 20vh;
+                cursor: pointer;
             }
         </style>
     </div>
