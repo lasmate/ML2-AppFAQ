@@ -42,12 +42,24 @@
     <div class="flex-page">
         <table>
             <tr>
-                <td><a href="FAQ/FAQBask.php"><img src="media/basket.jpeg" alt="Basket"></a></td>
-                <td><a href="FAQ/FAQFoot.php"><img src="media/foot.jpeg" alt="Football"></a></td>
+                <td>
+                    <div style="background-image: url('media/basket.jpeg'); background-size: cover; width: 100%; height: 20vh;" onclick="location.href='FAQ/FAQBask.php'">
+                    </div>
+                </td>
+                <td>
+                    <div style="background-image: url('media/foot.jpeg'); background-size: cover; width: 100%; height: 20vh;" onclick="location.href='FAQ/FAQBask.php'">
+                    </div>
+                </td>
             </tr>
             <tr>
-                <td><a href="FAQ/FAQHand.php"><img src="media/hand.jpg" alt="Handball"></a></td>
-                <td><a href="FAQ/FAQVolle.php"><img src="media/volley.jpg" alt="Volley"></a></td>
+                <td>
+                    <div style="background-image: url('media/hand.jpg'); background-size: cover; width: 100%; height: 20vh;" onclick="location.href='FAQ/FAQBask.php'">
+                    </div>
+                </td>
+                <td>
+                    <div style="background-image: url('media/volley.jpg'); background-size: cover; width: 100%; height: 20vh;" onclick="location.href='FAQ/FAQBask.php'">
+                    </div>
+                </td>
             </tr>
         </table>
     </div>
