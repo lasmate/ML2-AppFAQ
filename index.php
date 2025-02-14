@@ -10,18 +10,11 @@
 <body>
 <style>
         table {
-            width: 100%;
-            border-collapse: collapse;
+            width: 80vw;
             margin-top: 15vh;
         }
-        table td {
-            border: 0;
-            padding: 10px;
-            text-align: center;
-        }
-        table img {
-            width: 25vw;
-        }
+
+
     </style>
     <div class="flex-title"> <h1>Accueil</h1> </div>
     <div class="flex-container">
@@ -39,29 +32,21 @@
             <div class="flex-nav-Column"> <a href="FAQ/Account/deconnexion.php">Deconnexion</a></div>
     </div>
 </div>
-    <div class="flex-page">
-        <table>
-            <tr>
-                <td>
-                    <div style="background-image: url('media/basket.jpeg'); background-size: cover; width: 100%; height: 20vh;" onclick="location.href='FAQ/FAQBask.php'">
-                    </div>
-                </td>
-                <td>
-                    <div style="background-image: url('media/foot.jpeg'); background-size: cover; width: 100%; height: 20vh;" onclick="location.href='FAQ/FAQBask.php'">
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div style="background-image: url('media/hand.jpg'); background-size: cover; width: 100%; height: 20vh;" onclick="location.href='FAQ/FAQBask.php'">
-                    </div>
-                </td>
-                <td>
-                    <div style="background-image: url('media/volley.jpg'); background-size: cover; width: 100%; height: 20vh;" onclick="location.href='FAQ/FAQBask.php'">
-                    </div>
-                </td>
-            </tr>
-        </table>
+    <div class="flex-landing">
+        <div class="flexrow" >
+            <div style="background-image: url('media/basket.jpeg'); background-size: cover; width: 100%; height: 20vh;" onclick="location.href='FAQ/FAQBask.php'">
+            </div>
+
+            <div style="background-image: url('media/foot.jpeg'); background-size: cover; width: 100%; height: 20vh;" onclick="location.href='FAQ/FAQFoot.php'">
+            </div>
+        </div>
+        <div class="flexrow" >
+            <div style="background-image: url('media/hand.jpg'); background-size: cover; width: 100%; height: 20vh;" onclick="location.href='FAQ/FAQHand.php'">
+            </div>
+
+            <div style="background-image: url('media/volley.jpg'); background-size: cover; width: 100%; height: 20vh;" onclick="location.href='FAQ/FAQVolle.php'">
+            </div>
+        </div>
     </div>
 <?php include 'FAQ/components/footer.php';?>
 </body>
