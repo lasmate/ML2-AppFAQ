@@ -8,6 +8,21 @@
     <title>Réponso'Ligue</title>
 </head>
 <body>
+<style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15vh;
+        }
+        table td {
+            border: 0;
+            padding: 10px;
+            text-align: center;
+        }
+        table img {
+            width: 25vw;
+        }
+    </style>
     <div class="flex-title"> <h1>Accueil</h1> </div>
     <div class="flex-container">
         <p class='flex-nav' style="text-align: center">nom prenom</p>
