@@ -6,11 +6,7 @@
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
     <title>Réponso'Ligue</title>
-    <style>
-        
 
-
-</style>
 </head>
 <body>
 
@@ -31,28 +27,29 @@
     </div>
 </div>
     <div class="flex-landing">
-        <table>
-            <tr>
-                <td>
-                    <div style="background-image: url('media/basket.jpeg'); background-size: cover; width: 100%; height: 20vh;" onclick="location.href='FAQ/FAQBask.php'">
-                    </div>
-                </td>
-                <td>
-                    <div style="background-image: url('media/foot.jpeg'); background-size: cover; width: 100%; height: 20vh;" onclick="location.href='FAQ/FAQBask.php'">
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div style="background-image: url('media/hand.jpg'); background-size: cover; width: 100%; height: 20vh;" onclick="location.href='FAQ/FAQBask.php'">
-                    </div>
-                </td>
-                <td>
-                    <div style="background-image: url('media/volley.jpg'); background-size: cover; width: 100%; height: 20vh;" onclick="location.href='FAQ/FAQBask.php'">
-                    </div>
-                </td>
-            </tr>
-        </table>
+        <div class="flex-grid">
+            <div class="flex-item" style="background-image: url('media/basket.jpeg');" onclick="location.href='FAQ/FAQBask.php'"></div>
+            <div class="flex-item" style="background-image: url('media/foot.jpeg');" onclick="location.href='FAQ/FAQFoot.php'"></div>
+            <div class="flex-item" style="background-image: url('media/hand.jpg');" onclick="location.href='FAQ/FAQHand.php'"></div>
+            <div class="flex-item" style="background-image: url('media/volley.jpg');" onclick="location.href='FAQ/FAQVolle.php'"></div>
+            </div>
+        </div>
+
+        <style>
+            .flex-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15vh;
+            }
+            .flex-item {
+            background-size: cover;
+            width: calc(50% - 10px);
+            height: 20vh;
+            cursor: pointer;
+            }
+        </style>
     </div>
 <?php include 'FAQ/components/footer.php';?>
 </body>
