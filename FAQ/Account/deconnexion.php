@@ -24,7 +24,28 @@
         </div>
     </div>
     <div class="flex-page">
+    <form action="deconnexion.php" method="post">
+        <p>Êtes-vous sûr de vouloir vous déconnecter ?</p>
+        <button type="submit" name="confirm" value="yes">Oui</button>
+        <button type="submit" name="confirm" value="no">Non</button>
+    </form>
 
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (isset($_POST['confirm']) && $_POST['confirm'] === 'yes') {
+        // Logic to handle user logout
+        session_start();
+        session_unset();
+        session_destroy();
+        header('Location: ../../index.php');
+        exit();
+        } elseif (isset($_POST['confirm']) && $_POST['confirm'] === 'no') {
+        // Redirect to another page if user cancels logout
+        header('Location: ../../index.php');
+        exit();
+        }
+    }
+    ?>
 
 
 
