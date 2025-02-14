@@ -13,7 +13,7 @@
             margin-top: 15vh;
         }
         table td {
-            border: 1px solid black;
+            border: 0;
             padding: 10px;
             text-align: center;
         }
