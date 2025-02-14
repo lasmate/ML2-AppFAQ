@@ -18,6 +18,20 @@ p{
     padding: 0;
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15vh;
+}
+table td {
+    border: 0;
+    padding: 10px;
+    text-align: center;
+}
+table img {
+    width: 25vw;
+}
+
 .flex-title{
     position: absolute;
     display: flex;
