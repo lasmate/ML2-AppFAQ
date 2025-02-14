@@ -6,21 +6,6 @@
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
     <title>Réponso'Ligue</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15vh;
-        }
-        table td {
-            border: 0;
-            padding: 10px;
-            text-align: center;
-        }
-        table img {
-            width: 25vw;
-        }
-    </style>
 </head>
 <body>
     <div class="flex-title"> <h1>Accueil</h1> </div>
