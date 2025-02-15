@@ -28,28 +28,14 @@
 </div>
     <div class="flex-landing">
         <div class="flex-grid">
-            <div class="flex-item" style="background-image: url('media/basket.jpeg');" onclick="location.href='FAQ/FAQBask.php'"></div>
+            <div class="flex-item" style="background-image: url('media/basket.jpeg');" onclick="location.href='FAQ/FAQBask.php'">
+                <div><h2 >Ligue de basket</h2></div>
+            </div>
             <div class="flex-item" style="background-image: url('media/foot.jpeg');" onclick="location.href='FAQ/FAQFoot.php'"></div>
             <div class="flex-item" style="background-image: url('media/hand.jpg');" onclick="location.href='FAQ/FAQHand.php'"></div>
             <div class="flex-item" style="background-image: url('media/volley.jpg');" onclick="location.href='FAQ/FAQVolle.php'"></div>
             </div>
         </div>
-
-        <style>
-            .flex-grid {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
-                justify-content: center;
-                margin-top: 15vh;
-            }
-            .flex-item {
-                background-size: cover;
-                width: calc(50% - 10px);
-                height: 20vh;
-                cursor: pointer;
-            }
-        </style>
     </div>
 <?php include 'FAQ/components/footer.php';?>
 </body>
