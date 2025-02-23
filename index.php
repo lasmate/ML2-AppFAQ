@@ -35,22 +35,22 @@
     <div class="flex-landing">
         <div class="flex-grid">
             <div class="flex-item" style="background-image: url('media/basket.jpeg');" onclick="location.href='FAQ/FAQBask.php'">
-                <div style="height:100%;">
+                <div style="height:100%;align-content: flex-end;">
                     <h2>Ligue de basket</h2>
                 </div>
             </div>
             <div class="flex-item" style="background-image: url('media/foot.jpeg');" onclick="location.href='FAQ/FAQFoot.php'">
-                <div style="height:100%;">
+                <div style="height:100%;align-content: flex-end;">
                     <h2>Ligue de Foot</h2>
                 </div>
             </div>
             <div class="flex-item" style="background-image: url('media/hand.jpg');" onclick="location.href='FAQ/FAQHand.php'">
-                <div style="height:100%;">
+                <div style="height:100%;align-content: flex-end;">
                     <h2>Ligue de Handball</h2>
                 </div>
             </div>
             <div class="flex-item" style="background-image: url('media/volley.jpg');" onclick="location.href='FAQ/FAQVolle.php'">
-                <div style="height:100%;">
+                <div style="height:100%;align-content: flex-end;">:
                     <h2>Ligue de Volley</h2>
                 </div>
             </div>

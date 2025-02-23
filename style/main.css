@@ -16,12 +16,19 @@ p {
 	margin: 0;
 	padding: 0;
 }
+
 h2 {
-	color: aquamarine;
-	background-color: rgba(200, 150, 200, 0.6);
+	color: rgb(255, 255, 255);
+	background: linear-gradient(to right, grey, transparent);
 	margin: 0;
 	padding: 0;
 	text-align: center;
+	font-size: 2em;
+	transition: background 0.5s ease-in-out;
+}
+
+h2:hover {
+	background: linear-gradient(to right, transparent, grey);
 }
 
 .flex-landing {
@@ -45,15 +52,21 @@ h2 {
 }
 .flex-item {
 	background-size: cover;
+	background-position: 50%;
 	width: calc(50% - 10px);
 	height: 40vh;
 	cursor: pointer;
+}
+.flex-item:hover{
+	background-size: 170%;
+	background-repeat: no-repeat;
 }
 
 .flex-title {
 	position: absolute;
 	display: flex;
 	align-items: flex-start;
+	margin-left: 2%;
 	z-index: 1;
 }
 
