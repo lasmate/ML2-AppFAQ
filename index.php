@@ -14,7 +14,7 @@
 <body>
 <div class='parent'><div class="magicpattern"/>
     <div class="flex-title">
-        <h1>Accueil</h1>
+        Accueil
     </div>
     <div class="flex-container">
         <p class='flex-nav' style="text-align: center">nom prenom</p>
@@ -51,16 +51,15 @@
                 </div>
             </div>
             <div class="flex-item" style="background-image: url('media/volley.jpg');" onclick="location.href='FAQ/FAQVolle.php'">
-                <div style="height:100%;align-content: flex-end;">:
+                <div style="height:100%;align-content: flex-end;">
                     <h2>Ligue de Volley</h2>
                 </div>
             </div>
 
         </div>
     </div>
-    </div>
-    <?php include 'FAQ/components/footer.php'; ?>
+
+<?php include 'FAQ/components/footer.php'; ?>   
 </div>
 </body>
-
 </html>
