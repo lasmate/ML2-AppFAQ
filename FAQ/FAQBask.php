@@ -15,7 +15,7 @@
             <?php include "components/Qlist.php"; ?>
         </div>
     </div>
-    </div>
-    <?php include 'components/footer.php';?>
+    
+    <?php include 'components/footer.php';?></div>
 </body>
 </html>

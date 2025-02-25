@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
 </head>
 <body>
-    <div class="flex-title"> <h1>Inscription</h1> </div>
+    <div class="flex-title"> Inscription </div>
     <div class="flex-container">
 
         <div class="flex-nav"> <a href="../../index.php">Accueil</a></div>

@@ -8,7 +8,8 @@
 <div class='parent'><div class="magicpattern"/>
     <div class="flex-title"> FAQ Football </div>
     <?php include "components/navbar.php"; ?>
-    <div class="flex-page">
+    
+    <div class="flex-page"> 
         <div class="flex-menu">
             <div class="select-sort"> trier</div> 
         </div>
@@ -27,9 +28,9 @@
             <p>Reponse 6</p>
             <h2>Question 7</h2>
             <p>Reponse 7</p>
-        </div></div>
-        <?php include 'components/footer.php';?>
-    
+        </div>
     </div>
+    <?php include 'components/footer.php';?>
+</div>
 </body>
 </html>
