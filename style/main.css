@@ -42,7 +42,7 @@ h2:hover {
 }
 .flex-grid {
 	display: flex;
-	aligh-items: center;
+	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
 	width: 90vw;
