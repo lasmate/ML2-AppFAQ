@@ -14,8 +14,8 @@
         padding: 20px 0;
         text-align: center;
         border-top: 1px solid #e7e7e7;
-        border-top-left-radius: 14cap;
-        border-top-right-radius: 14cap;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
     }
     footer .container {
         max-width: 1200px;

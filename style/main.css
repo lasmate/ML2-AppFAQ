@@ -33,10 +33,11 @@ h2:hover {
 
 .flex-landing {
 	display: flex;
+
 	flex-direction: rows;
 	justify-content: center;
 	align-items: center;
-	top: 10vh;
+	margin-bottom: 2vh;
 
 	z-index: 5;
 }
@@ -54,6 +55,7 @@ h2:hover {
 	background-size: cover;
 	background-position: 50%;
 	width: calc(50% - 10px);
+	border-radius: 20px;
 	height: 40vh;
 	cursor: pointer;
 }
