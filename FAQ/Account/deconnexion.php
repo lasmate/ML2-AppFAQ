@@ -9,22 +9,22 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
 </head>
 <body>
-    <div class="flex-title"> Déconnexion </div>
+<div class="flex-title"> Deconnetion </div>
     <div class="flex-container">
-
-        <div class="flex-nav"> <a href="../../index.php">Accueil</a></div>
-        <div class="flex-nav" id="FAQ"><p> FAQ </p>
-                <div class="flex-nav-Column"> <a href="../FAQBask.php">Basket</a></div>
-                <div class="flex-nav-Column"> <a href="../FAQFoot.php">Football</a></div>
-                <div class="flex-nav-Column"> <a href="../FAQHand.php">Handball</a></div>
-                <div class="flex-nav-Column"> <a href="../FAQVolle.php">Volley</a></div>
-        </div>
-        <div class="flex-nav" id="Account"><p> Compte </p> 
-                <div class="flex-nav-Column"> <a href="inscription.php">Inscription</a></div>
-                <div class="flex-nav-Column"> <a href="connexion.php">Connexion</a></div>
-                <div class="flex-nav-Column"> <a href="deconnexion.php">Déconnexion</a></div>
-        </div>
+    <div class="flex-nav" onclick="location.href='../../index.php';">Acceuil</div>
+    <div class="flex-nav" id="FAQ"><p> FAQ </p>
+        <div class="flex-nav-Column" onclick="location.href='../FAQBask.php';">Basket</div>
+        <div class="flex-nav-Column" onclick="location.href='../FAQFoot.php';">Football</div>
+        <div class="flex-nav-Column" onclick="location.href='../FAQHand.php';">Handball</div>
+        <div class="flex-nav-Column" onclick="location.href='../FAQVolle.php';">Volley</div>
     </div>
+    <div class="flex-nav" id="Account"><p> Compte </p> 
+        <div class="flex-nav-Column" onclick="location.href='inscription.php';">Inscription</div>
+        <div class="flex-nav-Column" onclick="location.href='connexion.php';">Connexion</div>
+        <div class="flex-nav-Column" onclick="location.href='deconnexion.php';">Deconnexion</div>
+    </div>
+    </div>
+
     <div class="flex-page">
     <form action="./deconnexion.php" method="post">
         <p>Êtes-vous sûr de vouloir vous déconnecter ?</p>
