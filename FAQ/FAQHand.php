@@ -30,7 +30,7 @@
             <p>Reponse 7</p>
         </div>
     </div>
-</div> 
-<?php include 'components/footer.php';?>
+
+<?php include 'components/footer.php';?></div> 
 </body>
 </html>
