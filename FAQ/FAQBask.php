@@ -5,7 +5,7 @@
 </head>
 <body>
 <div class='parent'><div class="magicpattern"/>
-    <div class="flex-title"> <h1>FAQ Basket</h1> </div>
+    <div class="flex-title"> FAQ Basket </div>
     <?php include "components/navbar.php"; ?>
     <div class="flex-page">
         <div class="flex-menu">

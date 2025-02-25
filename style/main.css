@@ -65,14 +65,16 @@ h2:hover {
 .flex-title {
 	width: 14%;
 	height: 4vh;
-	background-color: #000000;
-	box-shadow: 0 0 10px 5px black;
-	outline: 2px solid orange;
+	
 	position: absolute;
 	display: flex;
 	align-items: flex-start;
 	margin-left: 2%;
 	z-index: 1;
+	font-size: 3em;
+	color: #FF8C00; /* dusk orange */
+	text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5), 8px 8px 4px rgba(0, 0, 0, 0.5), 12px 12px 8px rgba(0, 0, 0, 0.5); 
+	/* longer deep soft drop shadow with second offset shadow */
 }
 
 .flex-container {
