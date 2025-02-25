@@ -5,6 +5,7 @@
 
 </head>
 <body>
+<div class='parent'><div class="magicpattern"/>
     <div class="flex-title"> <h1>FAQ Handball</h1> </div>
     <?php include "components/navbar.php"; ?>
     <div class="flex-page">

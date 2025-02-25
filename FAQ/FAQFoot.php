@@ -5,6 +5,7 @@
 
 </head>
 <body>
+<div class='parent'><div class="magicpattern"/>
     <div class="flex-title"> <h1>FAQ Football</h1> </div>
     <?php include "components/navbar.php"; ?>
     <div class="flex-page">
@@ -26,13 +27,9 @@
             <p>Reponse 6</p>
             <h2>Question 7</h2>
             <p>Reponse 7</p>
-
-
-        </div>
-
-
-
-
+        </div></div>
         <?php include 'components/footer.php';?>
+    
+    </div>
 </body>
 </html>

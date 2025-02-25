@@ -63,6 +63,8 @@ h2:hover {
 }
 
 .flex-title {
+	box-shadow: 0 0 10px 5px black;
+	outline: 2px solid orange;
 	position: absolute;
 	display: flex;
 	align-items: flex-start;
