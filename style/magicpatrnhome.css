@@ -1,10 +1,10 @@
 .parent {
-  width: 100%;
 
   background: transparent;
   overflow: hidden
-}.magicpattern { 
-  width: 100%;
+}
+.magicpattern { 
+
   height: 100vh;
   background-size: cover;
   background-position: center center;

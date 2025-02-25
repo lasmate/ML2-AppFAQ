@@ -4,8 +4,7 @@
     <?php include "components/header.php"; ?>
 
 </head>
-<body>
-<div class='parent'><div class="magicpattern"/>
+<body class="magicpattern">
     <div class="flex-title"> FAQ Football </div>
     <?php include "components/navbar.php"; ?>
     
@@ -31,6 +30,6 @@
         </div>
     </div>
     <?php include 'components/footer.php';?>
-</div>
+
 </body>
 </html>
