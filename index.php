@@ -55,7 +55,6 @@
                     <h2>Ligue de Volley</h2>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
