@@ -9,8 +9,7 @@
 <body>
 <div class='parent'><div class="magicpattern"/>
 <div class="flex-title">Inscription</div>
-
-    <?php include "../components/navbar.php"; ?>
+<?php include "../components/navbarbis.php"; ?>
 
     <div class="flex-page">
     <div class="login-box">

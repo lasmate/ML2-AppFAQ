@@ -10,7 +10,7 @@
 <body>
 <div class='parent'><div class="magicpattern"/>
 <div class="flex-title"> Deconnection </div>
-    <?php include "../components/navbar.php"; ?>
+    <?php include "../components/navbarbis.php"; ?>
 
 
 
