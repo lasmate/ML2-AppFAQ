@@ -8,8 +8,10 @@
     <div class="flex-title"> FAQ Basket </div>
     <?php include "components/navbar.php"; ?>
     <div class="flex-page">
-        <div class="flex-menu">
-            <div class="select-sort"> trier</div> 
+        <div class="flex-menu"> trier
+            <div class="flex-container">
+                <span class="add-button"><a href="FAQModification/msgadd.php">poser question</a></span>
+            </div> 
         </div>
         <div class="flex-content">
             <?php include "components/Qlist.php"; ?>
