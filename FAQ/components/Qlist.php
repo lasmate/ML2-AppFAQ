@@ -9,7 +9,7 @@
         // echo "<div class='answer'>" . $answers[$i] . "</div>";
         // echo "<div class='answer'>" . $answers[$i] . "</div>";
         // echo "</div></div>";
-        echo "</div>";
+        
    }
 
     ?>

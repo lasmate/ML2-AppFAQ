@@ -12,21 +12,33 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// Define and sanitize $ligueselect
+$ligueselect = isset($_GET['ligueselect']) ? intval($_GET['ligueselect']) : 0;
+
 // Fetch data from the database
-$sql = "SELECT id_faq.faq, question.faq, reponce.faq, dat_question.faq, dat_reponce.faq, id_user.faq,id_user.user, id_ligue.user ,id_ligue.ligue FROM faq, user,ligue JOIN faq ON faq.id_user = user.id_user JOIN user ON user.id_ligue = ligue.id_ligue
-WHERE id_ligue = $ligueselect ORDER BY dat_question DESC";
+$sql = "SELECT f.id_faq, f.question AS question_faq, f.reponce AS reponce_faq, f.dat_question, f.dat_reponce, f.id_user AS faq_user_id, u.id_user AS user_id, u.id_ligue AS user_ligue_id, l.id_ligue, l.ligue 
+FROM faq f 
+JOIN user u ON f.id_user = u.id_user 
+JOIN ligue l ON u.id_ligue = l.id_ligue 
+WHERE l.id_ligue = $ligueselect 
+ORDER BY f.dat_question DESC";
+$result = $conn->query($sql);
+// Check if the query was executed successfully
+if ($result === false) {
+    die("Error executing query: " . $conn->error);
+}
  
-$result = $conn->query($sql);// Check if the query was executed
+        echo "<p>". $row["reponce"]."</p></div></div>"; //
 if ($result->num_rows > 0) { // Output data of each row
-    while($row = $result->fetch_assoc()) {// while there is data in the database
-        echo "<div class=\"question\">" ;
-        echo "<p>". $row["question.faq"]."</p>" ;
+        echo "<p>". $row["question"]."</p>" ;
         echo "<div class=\"reponce\" >" ;
-        echo "<p>". $row["reponce.faq"]."</p></div></div>"; //
+        echo "<p>". $row["reponce"]."</p></div></div>"; //
+        echo "<div class=\"reponce\" >" ;
+        echo "<p>". $row["reponce_faq"]."</p></div></div>"; //
     }
-} else {
+ else {
     echo "0 results";
 }
-
+    echo "No results found.";
 $conn->close();
 ?>
