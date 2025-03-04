@@ -1,3 +1,4 @@
+<?php include "/opt/lampp/htdocs/Projects/ML2-AppFAQ/config.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
