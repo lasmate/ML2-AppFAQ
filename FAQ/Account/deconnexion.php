@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réponso'Ligue</title>
-    <link rel="stylesheet" href="../../style/main.css">
-    <link rel="stylesheet" href="../../style/account.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+<?php include "../components/header.php"; ?>
+<link rel="stylesheet" href="../../style/main.css">
+<link rel="stylesheet" href="../../style/magicpatrnligue.css">
 </head>
 <body>
+<div class='parent'><div class="magicpattern"/>
+    <div class="flex-title"> FAQ Basket </div>
+    <?php include "../components/navbar.php"; ?>
 <div class="flex-title"> Deconnetion </div>
     <div class="flex-container">
     <div class="flex-nav" onclick="location.href='../../index.php';">Acceuil</div>
