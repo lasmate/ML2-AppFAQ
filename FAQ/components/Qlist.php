@@ -1,6 +1,6 @@
 <div>
    <?php 
-     $count = 5;
+     $count = 1;
     
      for ($i = 0; $i < $count; $i++) {
           include "components/Question.php";

@@ -7,7 +7,10 @@
         echo "<div class='flex-question'>". $theme;
         foreach ($questions as $question) {//$questions is an array
             echo "<div class='flex-question'><div class='question'>" . $question . "</div>";
-            echo "<div class='answer'>" . "Answer to " . $question . "</div></div>";
+            echo "<div class='answer'>" . "Answer to " . $question . "</div>";
+            echo "<form>";
+            echo "<button type='submit' id='question_$question' class='button-add'>Réponse</button>";
+            echo "</form></div>";
         }
         echo "</div>";
     }
@@ -32,5 +35,16 @@
     }
     .answer {
         font-style: italic;
+    }
+    .button-add {
+        color: white;
+          background-color: transparent;
+          font-family: Quicksand, sans-serif;
+          color: black;
+          font-size: 20px;
+          display: block;
+          margin: 10px 0px;
+          text-decoration: none;
+          padding: 5px;
     }
 </style>
