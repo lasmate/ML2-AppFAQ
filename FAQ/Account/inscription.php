@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php include "../components/header.php"; ?>
+<?php require_once "../components/header.php"; ?>
 <link rel="stylesheet" href="../../style/main.css">
 <link rel="stylesheet" href="../../style/magicpatrnligue.css">
 <link rel="stylesheet" href="../../style/account.css">
@@ -9,7 +9,7 @@
 <body>
 <div class='parent'><div class="magicpattern"/>
 <div class="flex-title">Inscription</div>
-<?php include "../components/navbarbis.php"; ?>
+<?php require_once "../components/navbarbis.php"; ?>
 
     <div class="flex-page">
     <div class="login-box">
