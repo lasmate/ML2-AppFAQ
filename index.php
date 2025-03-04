@@ -35,7 +35,7 @@
     </div>
     <div class="flex-landing">
         <div class="flex-grid">
-            <div class="flex-item" style="background-image: url('media/basket.jpeg');" onclick="location.href='FAQ/FAQBask.php'">
+            <div class="flex-item" style="background-image: url('media/basket.jpg');" onclick="location.href='FAQ/FAQBask.php'">
                 <div style="height:100%;align-content: flex-end;">
                     <h2>Ligue de basket</h2>
                 </div>
