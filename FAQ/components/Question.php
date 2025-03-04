@@ -1,26 +1,49 @@
 <?php 
-    $questions = array("Quand sera le prochain tournis?", "y'a-il des maillot fourni par la", "Question 3", "Question 4", "Question 5");
-    $answers = array("Answer 1", "Answer 2", "Answer 3", "Answer 4", "Answer 5");
-    $description = array("Jaimerais savoir quand ce passera le procain tournois, j'ai vu passer un mail qui disais que ca serai la semaine prochaine mais notre entraineur a dit que cetait dans 2 mois ", "Description 2", "Description 3", "Description 4", "Description 5");
-    $theme = array("theme 1", "theme 2", "theme 3", "theme 4", "theme 5");
-    echo"<div>";
-    foreach ($theme as $singleTheme) {
-        echo "<div class='flex-question'>". $theme;
-        for ($i = 0; $i < count($questions); $i++)
-        {
-            if ($theme[$i] === $singleTheme) {
-                echo "<form class='question-form'>";
-                echo "<div class='question'>" . $questions[$i] . "</div>";
-                echo "<div class='description'>" . $description[$i] . "</div>";
-                echo "<button type='button' class='button-add'>Answer</button>";
-                echo "<div class='answer'>" . $answers[$i] . "</div>";
-                echo "</form>";
-            }
-        }
+    $IDquestion = array(
+        1, 
+        2, 
+        3, 
+        4, 
+        5
+    );
+    $questions = array(
+        "Quand sera le prochain tournois?", 
+        "y'a-il des maillot fourni par la co'op", 
+        "Question 3", 
+        "Question 4", 
+        "Question 5"
+    );
+    $answers = array(
+        "Answer 1", 
+        "Answer 2", 
+        "Answer 3", 
+        "Answer 4", 
+        "Answer 5"
+    );
+    $description = array(
+        "J'aimerais savoir quand se passera le prochain tournoi. J'ai vu passer un mail qui disait que ce serait la semaine prochaine, mais notre entraîneur a dit que c'était dans 2 mois.", 
+        "Description 2", 
+        "Description 3", 
+        "Description 4", 
+        "Description 5"
+    );
 
-        }
+    echo "<div>";
+    for ($i = 0; $i < count($questions); $i++) {
+        echo "<div class='flex-question'>";
+        echo "<form class='question-form' action='FAQModification/msgmodif.php' method='post'>";
+        echo "<div class='question'>" . $questions[$i] . "</div>";
+        echo "<div class='description'>" . $description[$i] . "</div>";
+        echo "<input type='hidden' name='IDquestion' value='" . $IDquestion[$i] . "'>";
+        echo "<input type='hidden' name='question' value='" . htmlspecialchars($questions[$i], ENT_QUOTES) . "'>";
+        echo "<input type='hidden' name='description' value='" . htmlspecialchars($description[$i], ENT_QUOTES) . "'>";
+        echo "<input type='hidden' name='answer' value='" . htmlspecialchars($answers[$i], ENT_QUOTES) . "'>";
+        echo "<button type='submit' class='button-add'>Answer</button>";
+        echo "<div class='answer'>" . $answers[$i] . "</div>";
+        echo "</form>";
+        echo "</div>";
+    }
     echo "</div>";
-    
 ?>
 <style>
     .flex-question {

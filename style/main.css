@@ -16,11 +16,12 @@ h2 {
 	padding: 0;
 	text-align: center;
 	font-size: 2em;
-	transition: 0.5s;
+	transition: 0.4s;
 }
 
 h2:hover {
-	background-color: #0000003b;
+	background-color: #0000007e;
+	border-radius: 20px;
 }
 
 footer {
@@ -28,7 +29,7 @@ footer {
 	bottom: 0;
 	width: 100%;
 	background-color: #f8f9fa;
-	padding: 10px 0;
+	padding: 4px 0;
 	text-align: center;
 	border-top: 1px solid #e7e7e7;
 	border-top-left-radius: 30px;
@@ -36,7 +37,7 @@ footer {
 	z-index: 5;
 }
 footer .container {
-	max-width: 1200px;
+
 	margin: 0 auto;
 }
 footer p {
@@ -46,11 +47,12 @@ footer p {
 footer ul {
 	list-style: none;
 	padding: 0;
-	margin: 10px 0 0;
+	margin: 5px 0 0;
 }
 footer ul li {
 	display: inline;
 	margin: 0 10px;
+	transition: 0.4s;
 }
 footer ul li:hover {
 	text-decoration: underline;
