@@ -4,6 +4,8 @@
 <?php include "../components/header.php"; ?>
 <link rel="stylesheet" href="../../style/main.css">
 <link rel="stylesheet" href="../../style/magicpatrnligue.css">
+<link rel="stylesheet" href="../../style/account.css">
+
 </head>
 <body>
 <div class='parent'><div class="magicpattern"/>
