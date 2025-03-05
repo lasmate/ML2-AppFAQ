@@ -145,12 +145,12 @@ function replaceFaqUserIdWithPseudo($faqData, $userData) {
     
     return $faqData;
 }
-// Display the FAQ data as plaintext
-displayArrayPlaintext($faqdata);
-// Display the user data as plaintext
-displayArrayPlaintext($userData);
-// Display the ligue data as plaintext
-displayArrayPlaintext($ligueData);
+// // Display the FAQ data as plaintext
+// displayArrayPlaintext($faqdata);
+// // Display the user data as plaintext
+// displayArrayPlaintext($userData);
+// // Display the ligue data as plaintext
+// displayArrayPlaintext($ligueData);
 
 // Ensure that $faqdata is defined before applying the replacement
 if (isset($faqdata)) {
@@ -158,13 +158,12 @@ if (isset($faqdata)) {
     $faqdata = replaceFaqUserIdWithPseudo($faqdata, $userData);
 
     // Display the modified FAQ data
-    echo "<h3>FAQ data with user pseudos:</h3>";
-    displayArrayPlaintext($faqdata);
-} else {
-    echo "<p>No FAQ data available to modify.</p>";
-}
+//     echo "<h3>FAQ data with user pseudos:</h3>";
+//     displayArrayPlaintext($faqdata);
+// } else {
+//     echo "<p>No FAQ data available to modify.</p>";
+ }
 
 
-// Close the connection
-$conn->close();
+
 ?>

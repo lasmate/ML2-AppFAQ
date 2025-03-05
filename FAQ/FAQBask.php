@@ -3,6 +3,13 @@
 <head>
 
 <?php include "components/header.php"; ?>
+<?php include "components/msglist.php"; ?>
+<?php 
+    $faqdata = fetchFAQ();
+    $userdata = fetchUsers(); // corrected function name to maintain consistency
+    $faqdata = replaceFaqUserIdWithPseudo($faqdata, $userdata);
+?>
+
 </head>
 <body class="magicpattern">
     <div class="flex-title"> FAQ Basket </div>

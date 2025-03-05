@@ -1,44 +1,53 @@
 <?php 
-    $IDquestion = array(
-        1, 
-        2, 
-        3, 
-        4, 
-        5
-    );
-    $questions = array(
-        "Quand sera le prochain tournois?", 
-        "y'a-il des maillot fourni par la co'op", 
-        "Question 3", 
-        "Question 4", 
-        "Question 5"
-    );
-    $answers = array(
-        "Answer 1", 
-        "Answer 2", 
-        "Answer 3", 
-        "Answer 4", 
-        "Answer 5"
-    );
-    $description = array(
-        "J'aimerais savoir quand se passera le prochain tournoi. J'ai vu passer un mail qui disait que ce serait la semaine prochaine, mais notre entraîneur a dit que c'était dans 2 mois.", 
-        "Description 2", 
-        "Description 3", 
-        "Description 4", 
-        "Description 5"
-    );
-//  .$Prenom[$i].$Nom[$i].
+    
+//Example data
+    // $faqdata = array(
+    //             array(
+    //                 'id_faq' => 1,
+    //                 'question' => "Quand est-ce qu'il est le prochain tournoi ?",
+    //                 'reponse' => "Le prochain tournoi est dans 3 semaines.",
+    //                 'dat_question' => "2025-02-04 14:04:41",
+    //                 'dat_reponse' => "2025-02-04 14:04:41",
+    //                 'id_user' => 3
+    //             ),
+    //             array(
+    //                 'id_faq' => 2,
+    //                 'question' => "Où se trouve le prochain tournoi ?",
+    //                 'reponse' => "Il se trouve à Toulouse.",
+    //                 'dat_question' => "2025-02-04 14:06:02",
+    //                 'dat_reponse' => "2025-02-04 14:06:02",
+    //                 'id_user' => 2
+    //             ),
+    //             array(
+    //                 'id_faq' => 3,
+    //                 'question' => "Qu'elle est l'enjeux du prochain tournoi ?",
+    //                 'reponse' => "L'enjeux du prochain tournoi se sera les championnats de France.",
+    //                 'dat_question' => "2025-02-04 14:09:41",
+    //                 'dat_reponse' => "2025-02-04 14:09:41",
+    //                 'id_user' => 1
+    //             )
+    //         );
+
+    $questions = array_column($faqdata, 'question');
+    $answers = array_column($faqdata, 'reponse');
+    $IDquestion = array_column($faqdata, 'id_faq');
+    $Qdate = array_column($faqdata, 'dat_question');
+    $Adate = array_column($faqdata, 'dat_reponse');
+    $IDuser = array_column($faqdata, 'id_user');
     echo "<div>";
-    for ($i = 0; $i < count($questions); $i++) {
+    for ($i = 0; $i < count($faqdata); $i++) {
         echo "<div class='flex-question'>";
         echo "<form class='question-form' action='FAQModification/msgmodif.php' method='post'>";
-        echo "<div class='question'>" . $questions[$i] . "";
-        echo "<div class='description'>" . $description[$i] . "</div>";
-        echo "<div class='answer'>" . $answers[$i] . "</div></div>";
-        echo "<input type='hidden' name='IDquestion' value='" . $IDquestion[$i] . "'>";
+        echo "<div class='question'>" . htmlspecialchars($questions[$i], ENT_QUOTES) . "<br><span style='font-weight:150;font-size:0.9em;'>" . htmlspecialchars($Qdate[$i], ENT_QUOTES) . "</span></div>";
+        echo "<div class='answer'>" . htmlspecialchars($answers[$i], ENT_QUOTES) . "<br><span style='font-weight:150;font-size:0.7em;'>" . htmlspecialchars($Adate[$i], ENT_QUOTES) . "</span></div>";
+        echo "<input type='hidden' name='IDquestion' value='" . htmlspecialchars($IDquestion[$i], ENT_QUOTES) . "'>";
         echo "<input type='hidden' name='question' value='" . htmlspecialchars($questions[$i], ENT_QUOTES) . "'>";
-        echo "<input type='hidden' name='description' value='" . htmlspecialchars($description[$i], ENT_QUOTES) . "'>";
+        echo "<input type='hidden' name='description' value='" . htmlspecialchars($Qdate[$i], ENT_QUOTES) . "'>"; // updated to use the correct variable
         echo "<input type='hidden' name='answer' value='" . htmlspecialchars($answers[$i], ENT_QUOTES) . "'>";
+        echo "<input type='hidden' name='id_user' value='" . htmlspecialchars($IDuser[$i], ENT_QUOTES) . "'>"; // added to store user ID
+        echo "<input type='hidden' name='dat_question' value='" . htmlspecialchars($Qdate[$i], ENT_QUOTES) . "'>"; // added to store question date
+        echo "<input type='hidden' name='dat_reponse' value='" . htmlspecialchars($Adate[$i], ENT_QUOTES) . "'>"; // added to store answer date
+        echo "<input type='hidden' name='question_id' value='" . htmlspecialchars($IDquestion[$i], ENT_QUOTES) . "'>"; // added to store question ID again for clarity
         echo "<button type='submit' class='button-add'>Repondre/Modifier</button>";
         echo "</form>";
         echo "</div>";
