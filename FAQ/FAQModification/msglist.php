@@ -11,7 +11,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-// Fetch all records from faq table
 
 /**
  * Function to fetch FAQ data by ID or all FAQs if no ID is provided
@@ -43,8 +42,6 @@ function fetchFAQ($id_faq = null) {
 $faqdata = fetchFAQ();       // Fetch all FAQs
 // $faqdata = fetchFAQ(1);      // Fetch FAQ with id_faq = 1
 // $faqdata = fetchFAQ(999);    // Fetch FAQ with id_faq = 999   
-
-
 
 /**
  * Function to fetch user data by ID or all users if no ID is provided
@@ -109,14 +106,11 @@ $ligueData = fetchLigues();      // Fetch all ligues
 // $ligueData = fetchLigues(1);     // Fetch ligue with id_ligue = 1
 // $ligueData = fetchLigues(999);   // Fetch ligue with id_ligue = 999
 
-
-
 /**
  * Function to display FAQ data as plaintext
  * @param array $faqData The FAQ data array to display
  */
-function displayArrayPlaintext($faqData = []) {
-    echo "<h2>FAQ Data (Plaintext)</h2>";
+function displayArrayPlaintext($faqData = []) { 
     
     if (!empty($faqData)) {
         echo "<pre>";
@@ -127,6 +121,30 @@ function displayArrayPlaintext($faqData = []) {
     }
 }
 
+
+
+/**
+ * Replace id_user with user pseudo in FAQ data
+ * @param array $faqData Array of FAQ records
+ * @param array $userData Array of user records
+ * @return array Modified FAQ data
+ */
+function replaceFaqUserIdWithPseudo($faqData, $userData) {
+    // Create a lookup array for quick access to user pseudos
+    $userLookup = [];
+    foreach ($userData as $user) {
+        $userLookup[$user['id_user']] = $user['pseudo'];
+    }
+    
+    // Replace id_user with pseudo for each FAQ record
+    foreach ($faqData as &$faq) {
+        if (isset($faq['id_user']) && isset($userLookup[$faq['id_user']])) {
+            $faq['id_user'] = $userLookup[$faq['id_user']];
+        }
+    }
+    
+    return $faqData;
+}
 // Display the FAQ data as plaintext
 displayArrayPlaintext($faqdata);
 // Display the user data as plaintext
@@ -134,4 +152,19 @@ displayArrayPlaintext($userData);
 // Display the ligue data as plaintext
 displayArrayPlaintext($ligueData);
 
+// Ensure that $faqdata is defined before applying the replacement
+if (isset($faqdata)) {
+    // Apply the replacement
+    $faqdata = replaceFaqUserIdWithPseudo($faqdata, $userData);
+
+    // Display the modified FAQ data
+    echo "<h3>FAQ data with user pseudos:</h3>";
+    displayArrayPlaintext($faqdata);
+} else {
+    echo "<p>No FAQ data available to modify.</p>";
+}
+
+
+// Close the connection
+$conn->close();
 ?>
