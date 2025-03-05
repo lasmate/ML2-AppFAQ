@@ -39,21 +39,20 @@ for ($i = 0; $i < count($faqdata); $i++) {
     echo "<div class='flex-question'>";
     echo "<form class='question-form' action='FAQModification/msgmodif.php' method='post'>";
     echo "<div class='question'>" . htmlspecialchars($questions[$i], ENT_QUOTES) . "<br><span style='font-weight:150;font-size:0.9em;'>" . htmlspecialchars($Qdate[$i], ENT_QUOTES) . "</span></div>";
-    echo "<div class='answer'>" . htmlspecialchars($answers[$i], ENT_QUOTES) . "<br><span style='font-weight:150;font-size:0.7em;'>" . htmlspecialchars($Adate[$i], ENT_QUOTES) . "</span></div>";
-    echo "<input type='hidden' name='IDquestion' value='" . htmlspecialchars($IDfaq[$i], ENT_QUOTES) . "'>";//hidden input to send the question id
-    echo "<input type='hidden' name='question' value='" . htmlspecialchars($questions[$i], ENT_QUOTES) . "'>";//hidden input to send the question
-    echo "<input type='hidden' name='description' value='" . htmlspecialchars($Qdate[$i], ENT_QUOTES) . "'>"; //hidden input to send the question date
-    echo "<input type='hidden' name='answer' value='" . htmlspecialchars($answers[$i], ENT_QUOTES) . "'>";//hidden input to send the answer
-    echo "<input type='hidden' name='id_user' value='" . htmlspecialchars($IDuser[$i], ENT_QUOTES) . "'>"; //hidden input to send the user id
-    echo "<input type='hidden' name='dat_question' value='" . htmlspecialchars($Qdate[$i], ENT_QUOTES) . "'>"; //hidden input to send the question date
-    echo "<input type='hidden' name='dat_reponse' value='" . htmlspecialchars($Adate[$i], ENT_QUOTES) . "'>"; //hidden input to send the answer date
-    echo "<input type='hidden' name='question_id' value='" . htmlspecialchars($IDfaq[$i], ENT_QUOTES) . "'>"; //hidden input to send the ID for which ligu he belongs to
-
-    if (empty($answers[$i])) {
+    if (empty($answers[$i])) {//error handling if there is no answer
         echo "<input type='hidden' name='answer_message' value='Aucune réponse disponible.'>";
     } else {
-        echo "<input type='hidden' name='answer_message' value='" . htmlspecialchars($answers[$i], ENT_QUOTES) . "'>";
+        echo "<div class='answer'>" . htmlspecialchars($answers[$i], ENT_QUOTES) . "<br><span style='font-weight:150;font-size:0.7em;'>" . htmlspecialchars($Adate[$i], ENT_QUOTES) . "</span></div>";
     }
+    echo "<input type='hidden' name='IDquestion' value='" . htmlspecialchars($IDfaq[$i], ENT_QUOTES) . "'>";// question id
+    echo "<input type='hidden' name='question' value='" . htmlspecialchars($questions[$i], ENT_QUOTES) . "'>";// question
+    echo "<input type='hidden' name='description' value='" . htmlspecialchars($Qdate[$i], ENT_QUOTES) . "'>"; //question date
+    echo "<input type='hidden' name='answer' value='" . htmlspecialchars($answers[$i], ENT_QUOTES) . "'>";// answer
+    echo "<input type='hidden' name='id_user' value='" . htmlspecialchars($IDuser[$i], ENT_QUOTES) . "'>"; // user id
+    echo "<input type='hidden' name='dat_question' value='" . htmlspecialchars($Qdate[$i], ENT_QUOTES) . "'>"; // question date
+    echo "<input type='hidden' name='dat_reponse' value='" . htmlspecialchars($Adate[$i], ENT_QUOTES) . "'>"; // answer date
+    echo "<input type='hidden' name='question_id' value='" . htmlspecialchars($IDfaq[$i], ENT_QUOTES) . "'>"; // ID for which ligue the question is for
+    
     echo "<button type='submit' class='button-add'>Repondre/Modifier</button>";
     echo "</form>";
     echo "</div>";
