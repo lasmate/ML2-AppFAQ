@@ -12,6 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 // Fetch all records from faq table
+
 /**
  * Function to fetch FAQ data by ID or all FAQs if no ID is provided
  * @param int|null $id_faq The ID of the FAQ to fetch (optional)
@@ -38,63 +39,17 @@ function fetchFAQ($id_faq = null) {
     
     return $faqData;
 }
-
-function displayFAQ($faqData = []) {
-    echo "<h2>FAQ Data</h2>";
-    
-    if (!empty($faqData)) {
-        echo "<table border='1' cellpadding='5'>";
-        
-        // Table headers
-        if (count($faqData) > 0) {
-            echo "<tr>";
-            foreach (array_keys($faqData[0]) as $header) {
-                echo "<th>" . htmlspecialchars($header) . "</th>";
-            }
-            echo "</tr>";
-            
-            // Table data
-            foreach ($faqData as $row) {
-                echo "<tr>";
-                foreach ($row as $value) {
-                    echo "<td>" . htmlspecialchars($value) . "</td>";
-                }
-                echo "</tr>";
-            }
-        }
-        echo "</table>";
-    } else {
-        echo "<p>No FAQ records found.</p>";
-    }
-}
-
 // Example usage:
 $faqdata = fetchFAQ();       // Fetch all FAQs
 // $faqdata = fetchFAQ(1);      // Fetch FAQ with id_faq = 1
 // $faqdata = fetchFAQ(999);    // Fetch FAQ with id_faq = 999   
-displayFAQ($faqdata);
-/**
- * Function to display FAQ data as plaintext
- * @param array $faqData The FAQ data array to display
- */
-function displayFAQPlaintext($faqData = []) {
-    echo "<h2>FAQ Data (Plaintext)</h2>";
-    
-    if (!empty($faqData)) {
-        echo "<pre>";
-        print_r($faqData);
-        echo "</pre>";
-    } else {
-        echo "<p>No FAQ records found.</p>";
-    }
-}
 
-// Display the FAQ data as plaintext
-displayFAQPlaintext($faqdata);
+
 
 /**
  * Function to fetch user data by ID or all users if no ID is provided
  * @param int|null $id_user The ID of the user to fetch (optional)
+ * @return array Array of user data
  */
 function fetchUsers($id_user = null) {
     global $conn;
@@ -105,38 +60,23 @@ function fetchUsers($id_user = null) {
         $sql = "SELECT * FROM user";
     }
     $result = $conn->query($sql);
-
-    // Check if query was successful
+    
+    $userData = [];
+    
     if ($result) {
-        echo "<h2>User Data</h2>";
-        
         if ($result->num_rows > 0) {
-            echo "<table border='1' cellpadding='5'>";
-            
-            // Table headers
-            echo "<tr>";
-            $fields = $result->fetch_fields();
-            foreach ($fields as $field) {
-                echo "<th>" . htmlspecialchars($field->name) . "</th>";
-            }
-            echo "</tr>";
-            
-            // Table data
             while ($row = $result->fetch_assoc()) {
-                echo "<tr>";
-                foreach ($row as $value) {
-                    echo "<td>" . htmlspecialchars($value) . "</td>";
-                }
-                echo "</tr>";
+                $userData[] = $row;
             }
-            echo "</table>";
-        } else {
-            echo "<p>No user records found.</p>";
         }
-    } else {
-        echo "<p style='color: red;'>Error fetching user data: " . $conn->error . "</p>";
     }
+    
+    return $userData;
 }
+// Example usage:
+$userData = fetchUsers();      // Fetch all users
+// $userData = fetchUsers(1);     // Fetch user with id_user = 1
+// $userData = fetchUsers(999);   // Fetch user with id_user = 999
 
 /**
  * Function to fetch ligue data by ID or all ligues if no ID is provided
@@ -151,40 +91,47 @@ function fetchLigues($id_ligue = null) {
         $sql = "SELECT * FROM ligue";
     }
     $result = $conn->query($sql);
-
-    // Check if query was successful
+    
+    $ligueData = [];
+    
     if ($result) {
-        echo "<h2>Ligue Data</h2>";
-        
         if ($result->num_rows > 0) {
-            echo "<table border='1' cellpadding='5'>";
-            
-            // Table headers
-            echo "<tr>";
-            $fields = $result->fetch_fields();
-            foreach ($fields as $field) {
-                echo "<th>" . htmlspecialchars($field->name) . "</th>";
-            }
-            echo "</tr>";
-            
-            // Table data
             while ($row = $result->fetch_assoc()) {
-                echo "<tr>";
-                foreach ($row as $value) {
-                    echo "<td>" . htmlspecialchars($value) . "</td>";
-                }
-                echo "</tr>";
+                $ligueData[] = $row;
             }
-            echo "</table>";
-        } else {
-            echo "<p>No ligue records found.</p>";
         }
+    }
+    
+    return $ligueData;
+}
+// Example usage:
+$ligueData = fetchLigues();      // Fetch all ligues
+// $ligueData = fetchLigues(1);     // Fetch ligue with id_ligue = 1
+// $ligueData = fetchLigues(999);   // Fetch ligue with id_ligue = 999
+
+
+
+/**
+ * Function to display FAQ data as plaintext
+ * @param array $faqData The FAQ data array to display
+ */
+function displayArrayPlaintext($faqData = []) {
+    echo "<h2>FAQ Data (Plaintext)</h2>";
+    
+    if (!empty($faqData)) {
+        echo "<pre>";
+        print_r($faqData);
+        echo "</pre>";
     } else {
-        echo "<p style='color: red;'>Error fetching ligue data: " . $conn->error . "</p>";
+        echo "<p>No FAQ records found.</p>";
     }
 }
 
-// Example usage:
-fetchUsers();      // Fetch all users
-fetchLigues();     // Fetch all ligues
+// Display the FAQ data as plaintext
+displayArrayPlaintext($faqdata);
+// Display the user data as plaintext
+displayArrayPlaintext($userData);
+// Display the ligue data as plaintext
+displayArrayPlaintext($ligueData);
+
 ?>
