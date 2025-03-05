@@ -25,43 +25,72 @@ function fetchFAQ($id_faq = null) {
         $sql = "SELECT * FROM faq";
     }
     $result = $conn->query($sql);
-
-    // Check if query was successful
+    
+    $faqData = [];
+    
     if ($result) {
-        echo "<h2>FAQ Data</h2>";
-        
         if ($result->num_rows > 0) {
-            echo "<table border='1' cellpadding='5'>";
-            
-            // Table headers
+            while ($row = $result->fetch_assoc()) {
+                $faqData[] = $row;
+            }
+        }
+    }
+    
+    return $faqData;
+}
+
+function displayFAQ($faqData = []) {
+    echo "<h2>FAQ Data</h2>";
+    
+    if (!empty($faqData)) {
+        echo "<table border='1' cellpadding='5'>";
+        
+        // Table headers
+        if (count($faqData) > 0) {
             echo "<tr>";
-            $fields = $result->fetch_fields();
-            foreach ($fields as $field) {
-                echo "<th>" . htmlspecialchars($field->name) . "</th>";
+            foreach (array_keys($faqData[0]) as $header) {
+                echo "<th>" . htmlspecialchars($header) . "</th>";
             }
             echo "</tr>";
             
             // Table data
-            while ($row = $result->fetch_assoc()) {
+            foreach ($faqData as $row) {
                 echo "<tr>";
                 foreach ($row as $value) {
                     echo "<td>" . htmlspecialchars($value) . "</td>";
                 }
                 echo "</tr>";
             }
-            echo "</table>";
-        } else {
-            echo "<p>No FAQ records found.</p>";
         }
+        echo "</table>";
     } else {
-        echo "<p style='color: red;'>Error fetching FAQ data: " . $conn->error . "</p>";
+        echo "<p>No FAQ records found.</p>";
     }
 }
 
 // Example usage:
-fetchFAQ();       // Fetch all FAQs
-fetchFAQ(1);      // Fetch FAQ with id_faq = 1
-fetchFAQ(999);    // Fetch FAQ with id_faq = 999   
+$faqdata = fetchFAQ();       // Fetch all FAQs
+// $faqdata = fetchFAQ(1);      // Fetch FAQ with id_faq = 1
+// $faqdata = fetchFAQ(999);    // Fetch FAQ with id_faq = 999   
+displayFAQ($faqdata);
+/**
+ * Function to display FAQ data as plaintext
+ * @param array $faqData The FAQ data array to display
+ */
+function displayFAQPlaintext($faqData = []) {
+    echo "<h2>FAQ Data (Plaintext)</h2>";
+    
+    if (!empty($faqData)) {
+        echo "<pre>";
+        print_r($faqData);
+        echo "</pre>";
+    } else {
+        echo "<p>No FAQ records found.</p>";
+    }
+}
+
+// Display the FAQ data as plaintext
+displayFAQPlaintext($faqdata);
 
 /**
  * Function to fetch user data by ID or all users if no ID is provided
