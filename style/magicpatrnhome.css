@@ -1,7 +1,12 @@
 .parent {
 
   background: transparent;
-  overflow: hidden
+  overflow: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+.parent::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }
 .magicpattern { 
 

@@ -6,9 +6,10 @@
 <link rel="stylesheet" href="../../style/magicpatrnligue.css">
 <style>
         .form-container {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             border-radius: 8px;
+            padding: 10px;
             width: 80%;
             max-width: 600px;
             margin: 0 auto;

@@ -10,7 +10,7 @@
     <div class="flex-page">
         <div class="flex-menu"> trier
             <div class="flex-container">
-                <span class="add-button"><a href="FAQModification/msgadd.php">poser question</a></span>
+                <span class="add-button" onclick="location.href='FAQModification/msgadd.php'"  ><span class="material-symbols-outlined">add</span></span>
             </div> 
         </div>
         <div class="flex-content">

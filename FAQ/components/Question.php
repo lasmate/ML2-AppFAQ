@@ -27,19 +27,19 @@
         "Description 4", 
         "Description 5"
     );
-
+//  .$Prenom[$i].$Nom[$i].
     echo "<div>";
     for ($i = 0; $i < count($questions); $i++) {
         echo "<div class='flex-question'>";
         echo "<form class='question-form' action='FAQModification/msgmodif.php' method='post'>";
-        echo "<div class='question'>" . $questions[$i] . "</div>";
+        echo "<div class='question'>" . $questions[$i] . "";
         echo "<div class='description'>" . $description[$i] . "</div>";
+        echo "<div class='answer'>" . $answers[$i] . "</div></div>";
         echo "<input type='hidden' name='IDquestion' value='" . $IDquestion[$i] . "'>";
         echo "<input type='hidden' name='question' value='" . htmlspecialchars($questions[$i], ENT_QUOTES) . "'>";
         echo "<input type='hidden' name='description' value='" . htmlspecialchars($description[$i], ENT_QUOTES) . "'>";
         echo "<input type='hidden' name='answer' value='" . htmlspecialchars($answers[$i], ENT_QUOTES) . "'>";
-        echo "<button type='submit' class='button-add'>Answer</button>";
-        echo "<div class='answer'>" . $answers[$i] . "</div>";
+        echo "<button type='submit' class='button-add'>Repondre/Modifier</button>";
         echo "</form>";
         echo "</div>";
     }
@@ -47,27 +47,48 @@
 ?>
 <style>
     .flex-question {
+        background-color: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
         display: flex;
-        flex-direction: column;
+        max-width: 75vw;
         margin: 10px;
-        padding: 10px;
-        border: 1px solid black;
+        padding: 20px;
     }
+
     .question {
         font-weight: bold;
+        font-size: .8em;
     }
-    .answer {
+
+    .description, .answer {
+        background-color: rgba(225, 225, 225, 0.6);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
+        margin-left: 10px;
+        font-weight: normal;
         font-style: italic;
+        padding: 10px;
     }
+    .description {
+
+        margin-top: 5px;
+    }
+
+    .answer {
+ 
+        margin-top: 1vh;
+        margin-left: 20px;
+    }
+
     .button-add {
-          background-color: transparent;
-          font-family: Quicksand, sans-serif;
-          color: black;
-          font-size: 20px;
-          display: block;
-          margin: 10px 0px;
-          text-decoration: none;
-          padding: 5px;
-          padding: 5px;
+        background-color: rgba(225, 225, 225, 0.6);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
+        padding: 5px;
+        margin: 10px 0;
+        font-size: 1em;
+        display: block;
     }
+
 </style>
