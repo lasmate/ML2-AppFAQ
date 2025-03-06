@@ -27,11 +27,11 @@
         session_destroy();
         // Redirect to the homepage
         // Redirect to the homepage if the user cancels logout
-        header('Location: ../../index.php');
+        header('Location: ../index.php');
         exit();
         } elseif (isset($_POST['confirm']) && $_POST['confirm'] === 'no') {
         // Redirect to another page if user cancels logout
-        header('Location: ../../index.php');
+        header('Location: ../index.php');
         exit();
         }
     }

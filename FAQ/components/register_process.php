@@ -28,10 +28,12 @@
         try {
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Get form data
+            $ligue = sanitize_input($_POST["ligue"]);
             $username = sanitize_input($_POST["username"]);
             $email = sanitize_input($_POST["email"]);
             $password = $_POST["password"];
             $confirm_password = $_POST["confirm_password"];
+
             
             // Initialize error array
             $errors = array();
@@ -48,7 +50,9 @@
             if (empty($password)) {
                 $errors[] = "Password is required";
             }
-            
+            if(empty($ligue)){
+                $errors[] = "Ligue is required";
+            }
             // Check if passwords match
             if ($password !== $confirm_password) {
                 $errors[] = "Passwords do not match";
@@ -69,10 +73,8 @@
                 // Hash password
                 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
                 
-                // Set default values for missing fields
-                $email = ""; // You might want to add email field to your form
-                $id_usertype = 1; // Default user type (adjust as needed)
-                $id_ligue = NULL; // Default ligue (adjust as needed)
+                $id_usertype = 1; // Default user type 
+                $id_ligue = $ligue; // Default ligue 
                 
                 // Insert user into database
                 $stmt = $conn->prepare("INSERT INTO user (pseudo, mdp, mail, id_usertype, id_ligue) VALUES (?, ?, ?, ?, ?)");
@@ -93,12 +95,12 @@
             // If there are errors, store them and redirect back
             if (!empty($errors)) {
                 $_SESSION["register_errors"] = $errors;
-                header("Location: inscription.php");
+                header("Location: ../account/inscription.php");
                 exit;
             }
         } else {
             // Not a POST request
-            header("Location: inscription.php");
+            header("Location: ../account/inscription.php");
             exit;
         }
 

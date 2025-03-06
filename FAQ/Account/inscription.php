@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php require_once "../components/header.php"; ?>
+<?php require_once '../components/header.php'; ?>
 <link rel="stylesheet" href="../../style/main.css">
 <link rel="stylesheet" href="../../style/magicpatrnligue.css">
 <link rel="stylesheet" href="../../style/account.css">
 </head>
 <body class="magicpattern">
 <div class="flex-title">Inscription</div>
-<?php require_once "../components/navbarbis.php"; ?>
+<?php require_once '../components/navbarbis.php'; ?>
     <div class="flex-page">
     <div class="login-box">
         <form action="../components/register_process.php" method="post">
             <p>Sport (sélectionner en 1)</p>
             <div class="radio-group" >
                 <div class="radio-option" >
-                    <input type="radio" id="football" name="sport" value="1" required>
+                    <input type="radio" id="football" name="ligue" value="1" required>
                     <label for="football">Football</label>
                 </div>
                 <div class="radio-option">
-                    <input type="radio" id="basket" name="sport" value="2">
+                    <input type="radio" id="basket" name="ligue" value="2">
                     <label for="basket">Basket</label>
                 </div>
                 <div class="radio-option">
-                    <input type="radio" id="volleyball" name="sport" value="3">
+                    <input type="radio" id="volleyball" name="ligue" value="3">
                     <label for="volleyball">Volleyball</label>
                 </div>
                 <div class="radio-option">
-                    <input type="radio" id="handball" name="sport" value="4">
+                    <input type="radio" id="handball" name="ligue" value="4">
                     <label for="handball">Handball</label>
                 </div>
             </div>
-        <br><br>
+        <div class="margin-separator"></div>
         <div class="textbox">
             <label for="username">Pseudo:</label>
             <input type="text" id="username" name="username" required>
