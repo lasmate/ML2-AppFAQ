@@ -5,8 +5,7 @@
 <link rel="stylesheet" href="../../style/main.css">
 <link rel="stylesheet" href="../../style/magicpatrnligue.css">
 </head>
-<body>
-<div class='parent'><div class="magicpattern"/>
+<body class="magicpattern">
     <div class="flex-title"> FAQ Basket </div>
     <?php require_once "../components/navbar.php"; ?>
 
