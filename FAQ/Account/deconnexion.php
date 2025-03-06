@@ -6,16 +6,11 @@
 <link rel="stylesheet" href="../../style/magicpatrnligue.css">
 <link rel="stylesheet" href="../../style/account.css">
 </head>
-<body>
-<div class='parent'><div class="magicpattern"/>
-<div class="flex-title">Inscription</div>
+<body class="magicpattern">
+<div class="flex-title">Déconnexion</div>
 <?php require_once "../components/navbarbis.php"; ?>
-
-
-
-
     <div class="flex-page">
-    <form action="./deconnexion.php" method="post">
+    <form action="../deconnexion.php" method="post">
         <p>Êtes-vous sûr de vouloir vous déconnecter ?</p>
         <button type="submit" name="confirm" value="yes">Oui</button>
         <button type="submit" name="confirm" value="no">Non</button>

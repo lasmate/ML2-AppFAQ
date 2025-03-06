@@ -6,11 +6,9 @@
 <link rel="stylesheet" href="../../style/magicpatrnligue.css">
 <link rel="stylesheet" href="../../style/account.css">
 </head>
-<body>
-<div class='parent'><div class="magicpattern"/>
+<body class="magicpattern">
 <div class="flex-title">Inscription</div>
 <?php require_once "../components/navbarbis.php"; ?>
-
     <div class="flex-page">
     <div class="login-box">
         <form action="../components/register_process.php" method="post">
@@ -54,7 +52,7 @@
             <button type="submit">S'inscrire</button>
         </div>
         </form>
-    </div>
+
     </div>
 </body>
 </html>

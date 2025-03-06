@@ -6,34 +6,29 @@
 <link rel="stylesheet" href="../../style/magicpatrnligue.css">
 <link rel="stylesheet" href="../../style/account.css">
 </head>
-<body>
-<div class='parent'><div class="magicpattern"/>
+<body class="magicpattern">
 <div class="flex-title">Inscription</div>
 <?php require_once "../components/navbarbis.php"; ?>
-
-    
-
     <div class="flex-page">
-
     <div class="login-box">
-        <form action="login_process.php" method="post">
+        <form action="../components/login_process.php" method="post">
         <div class="textbox">
-            <label for="username">Username:</label>
+            <label for="username">Pseudo:</label>
             <input type="text" id="username" name="username" required>
         </div>
         <div class="textbox">
-            <label for="password">Password:</label>
+            <label for="password">Mot de passe:</label>
             <input type="password" id="password" name="password" required>
         </div>
         <div class="checkbox">
             <input type="checkbox" id="remember" name="remember">
-            <label for="remember">Remember me</label>
+            <label for="remember">Se souvenir de moi</label>
         </div>
         <div class="button">
-            <button type="submit">Login</button>
+            <button type="submit">Se connecter</button>
         </div>
         </form>
-    </div>        
+      
     </div>
 </body>
 </html>
