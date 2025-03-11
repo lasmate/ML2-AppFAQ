@@ -5,7 +5,7 @@
 <?php include "components/header.php"; ?>
 <?php include "components/msglist.php"; ?>
 <?php 
-    $faqdata = fetchFAQ();
+    $faqdata = fetchFAQ(1);
     $userdata = fetchUsers(); // corrected function name to maintain consistency
     $faqdata = replaceFaqUserIdWithPseudo($faqdata, $userdata);
 ?>
