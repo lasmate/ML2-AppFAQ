@@ -42,7 +42,6 @@
                     
                     header("Location: ../index.php"); // Redirect after successful login
                     exit();
-                    exit();
                 } 
                 $_SESSION["error"] = "Nom d'utilisateur ou mot de passe incorrect.";
                 header("Location: connexion.php");
