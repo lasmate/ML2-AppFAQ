@@ -69,7 +69,7 @@
         // Hash password
         // $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         
-        $id_usertype = 1; // Default user type 
+        $id_usertype = 3; // Default user type 
         $id_ligue = $ligue; // Default ligue 
         
         // Insert user into database
