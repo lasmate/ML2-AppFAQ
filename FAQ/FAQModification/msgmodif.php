@@ -52,7 +52,7 @@
 <body>
 <div class='parent'><div class="magicpattern"/>
     <div class="flex-title"> FAQ Basket </div>
-    <?php include "../components/navbar.php"; ?>
+    <?php include "../components/navbarbis.php"; ?>
     <?php
     // Process the form data if it's submitted
     $question = '';

@@ -7,7 +7,7 @@
 </head>
 <body class="magicpattern">
     <div class="flex-title"> FAQ Basket </div>
-    <?php require_once "../components/navbar.php"; ?>
+    <?php require_once "../components/navbarbis.php"; ?>
 
 
 </body>

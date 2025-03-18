@@ -9,7 +9,7 @@
 </head>
 <body class="magicpattern">
     <div class="flex-title"> FAQ Basket </div>
-    <?php include_once "../components/navbar.php"; ?>
+    <?php include_once "../components/navbarbis.php"; ?>
     <div class="login-box">
         <form action="../components/new_question_process.php" method="post" enctype="multipart/form-data">
             <label for="question">Question:</label>
