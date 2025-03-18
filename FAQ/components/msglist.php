@@ -145,12 +145,12 @@ function replaceFaqUserIdWithPseudo($faqData, $userData) {
     
     return $faqData;
 }
-// // Display the FAQ data as plaintext
-// displayArrayPlaintext($faqdata);
-// // Display the user data as plaintext
-// displayArrayPlaintext($userData);
-// // Display the ligue data as plaintext
-// displayArrayPlaintext($ligueData);
+//  // Display the FAQ data as plaintext
+//  displayArrayPlaintext($faqdata);
+//  // Display the user data as plaintext
+//  displayArrayPlaintext($userData);
+//  // Display the ligue data as plaintext
+//  displayArrayPlaintext($ligueData);
 
 // Ensure that $faqdata is defined before applying the replacement
 if (isset($faqdata)) {
