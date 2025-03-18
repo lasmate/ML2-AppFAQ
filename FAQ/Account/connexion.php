@@ -70,7 +70,7 @@
 ?>
 </head>
 <body class="magicpattern">
-<div class="flex-title">Connection</div>
+<div class="flex-title">Connexion</div>
 <?php require_once "../components/navbarbis.php"; ?>
     <div class="flex-page">
     <div class="login-box">
