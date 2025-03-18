@@ -12,8 +12,7 @@
 </head>
 
 <body>
-<div class='parent'><div class="magicpattern"/>
-    
+<div class="magicpattern"/>
     <div class="flex-container">
         <p class='flex-nav' style="text-align: center">nom prenom</p>
         <div class="flex-nav" onclick="location.href='index.php'"><span>Accueil</span></div>
@@ -25,18 +24,39 @@
         </div>
     </div>
     <div class="flex-landing">
-        <div class="flex-grid">
-            <div class="flex-item" style="background-image: url('../../media/hand.jpg');" onclick="location.href='FAQ/FAQHand.php'">
-                <div class="flex-title">
-                    Administration
+            <div class="flex-item" style="background-image: url('../../media/basket.jpg');" onclick="location.href='FAQ/FAQBask.php'">
+            <div class="flex-title">
+                Administration
+            </div>
+                <div style="height:100%;align-content: flex-end;">
+                    <h2>Ligue de basket</h2>
                 </div>
+            </div>
+            <div class="flex-item" style="background-image: url('../../media/foot.jpeg');" onclick="location.href='FAQ/FAQFoot.php'">
+            <div class="flex-title">
+                Administration
+            </div>
+                <div style="height:100%;align-content: flex-end;">
+                    <h2>Ligue de Foot</h2>
+                </div>
+            </div>
+            <div class="flex-item" style="background-image: url('../../media/hand.jpg');" onclick="location.href='FAQ/FAQHand.php'">
+            <div class="flex-title">
+                Administration
+            </div>
                 <div style="height:100%;align-content: flex-end;">
                     <h2>Ligue de Handball</h2>
                 </div>
             </div>
+            <div class="flex-item" style="background-image: url('../../media/volley.jpg');" onclick="location.href='FAQ/FAQVolle.php'">
+            <div class="flex-title">
+                Administration
+            </div>
+                <div style="height:100%;align-content: flex-end;">
+                    <h2>Ligue de Volley</h2>
+                </div>
+            </div>
         </div>
-    </div>
-    <?php include "../components/Qlist.php"; ?>
 </div>
 <?php include '../../FAQ/components/footer.php'; ?>   
 
