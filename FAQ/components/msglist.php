@@ -40,7 +40,7 @@ function fetchFAQ($id_faq = null) {
 }
 // Example usage:
 $faqdata = fetchFAQ();       // Fetch all FAQs
-// $faqdata = fetchFAQ(1);      // Fetch FAQ with id_faq = 1
+//$faqdata = fetchFAQ(1);      // Fetch FAQ with id_faq = 1
 // $faqdata = fetchFAQ(999);    // Fetch FAQ with id_faq = 999   
 
 /**
@@ -148,7 +148,7 @@ function replaceFaqUserIdWithPseudo($faqData, $userData) {
 //  // Display the FAQ data as plaintext
 //  displayArrayPlaintext($faqdata);
 //  // Display the user data as plaintext
-//  displayArrayPlaintext($userData);
+  displayArrayPlaintext($userData);
 //  // Display the ligue data as plaintext
 //  displayArrayPlaintext($ligueData);
 

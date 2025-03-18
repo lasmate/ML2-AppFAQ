@@ -78,7 +78,7 @@ $Qdate = array_column($faqdata, 'dat_question');
 $Adate = array_column($faqdata, 'dat_reponse');
 $IDuser = array_column($faqdata, 'id_user');
 echo "<div>";
-for ($i = 1; $i < count($faqdata); $i++) {
+for ($i = 0; $i < count($faqdata); $i++) {
     echo "<div class='flex-question'>";
     echo "<form class='question-form' action='FAQModification/msgmodif.php' method='post'>";
     echo "<div class='question'>" . htmlspecialchars($questions[$i], ENT_QUOTES) . "<br><span style='font-weight:150;font-size:0.9em;'>" . htmlspecialchars($Qdate[$i], ENT_QUOTES) . "</span></div>";

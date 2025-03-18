@@ -1,3 +1,14 @@
+<!-- <?php
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])) {
+    // User is not logged in, redirect to login page
+    header('Location: ../FAQ/Account/connexion.php');
+    exit();
+}
+?> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +32,7 @@
         </div> 
     </div>
         <div class="flex-content">
-            <?php include "components/Qlist.php"; ?>
+            <?php include "components/Question.php"; ?>
         </div>
     </div>
     <?php include 'components/footer.php';?>

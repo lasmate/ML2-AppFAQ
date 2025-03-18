@@ -21,7 +21,7 @@
         </div> 
     </div>
         <div class="flex-content">
-            <?php include "components/Qlist.php"; ?>
+            <?php include "components/Question.php";?>
         </div>
     </div>
     <?php include 'components/footer.php';?>
