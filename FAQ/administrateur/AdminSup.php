@@ -1,3 +1,22 @@
+<?php
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])) {
+    // User is not logged in, redirect to login page
+    header('Location: ../Account/connection.php');
+    exit();
+}
+else {
+    // User is logged in, check if he is a super admin
+    if ($_SESSION['usertype'] != '1') {
+        // User is not a super admin, redirect to home page
+        header('Location: ../../index.php');
+        exit();
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
