@@ -1,7 +1,6 @@
 <div class="flex-container">
     <?php
-        session_start();
-        
+
         $displayName = "non connecté";
         
         if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
@@ -31,16 +30,26 @@
         
         echo "<p class='flex-nav' style='text-align: center'>" . $displayName . "</p>";
     ?>
-    <div class="flex-nav" onclick="location.href='../index.php'">Accueil</div>
-    <div class="flex-nav" id="FAQ"><p> FAQ </p>
-        <div class="flex-nav-Column" onclick="location.href='FAQBask.php'">Basket</div>
-        <div class="flex-nav-Column" onclick="location.href='FAQFoot.php'">Football</div>
-        <div class="flex-nav-Column" onclick="location.href='FAQHand.php'">Handball</div>
-        <div class="flex-nav-Column" onclick="location.href='FAQVolle.php'">Volley</div>
-    </div>
-    <div class="flex-nav" id="Account"><p> Compte </p> 
-        <div class="flex-nav-Column" onclick="location.href='Account/inscription.php'">Inscription</div>
-        <div class="flex-nav-Column" onclick="location.href='Account/connexion.php'">Connexion</div>
-        <div class="flex-nav-Column" onclick="location.href='Account/deconnexion.php'">Deconnexion</div>
-    </div>
+        <div class="flex-nav" id="home">Accueil</div>
+        <div class="flex-nav" id="FAQ"><p> FAQ </p>
+            <div class="flex-nav-Column" id="FAQBask">Basket</div>
+            <div class="flex-nav-Column" id="FAQFoot">Football</div>
+            <div class="flex-nav-Column" id="FAQHand">Handball</div>
+            <div class="flex-nav-Column" id="FAQVolle">Volley</div>
+        </div>
+        <div class="flex-nav" id="Account"><p> Compte </p> 
+            <div class="flex-nav-Column" id="inscription">Inscription</div>
+            <div class="flex-nav-Column" id="connexion">Connexion</div>
+            <div class="flex-nav-Column" id="deconnexion">Deconnexion</div>
+        </div>
+    <script>
+        document.getElementById('home').onclick = function() { location.href='../index.php'; };
+        document.getElementById('FAQBask').onclick = function() { location.href='FAQBask.php'; };
+        document.getElementById('FAQFoot').onclick = function() { location.href='FAQFoot.php'; };
+        document.getElementById('FAQHand').onclick = function() { location.href='FAQHand.php'; };
+        document.getElementById('FAQVolle').onclick = function() { location.href='FAQVolle.php'; };
+        document.getElementById('inscription').onclick = function() { location.href='Account/inscription.php'; };
+        document.getElementById('connexion').onclick = function() { location.href='Account/connexion.php'; };
+        document.getElementById('deconnexion').onclick = function() { location.href='Account/deconnexion.php'; };
+    </script>
 </div>

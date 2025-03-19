@@ -1,7 +1,6 @@
 <div class="flex-container">
 <?php
-        session_start();
-        
+
         $displayName = "non connecté";
         
         if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {

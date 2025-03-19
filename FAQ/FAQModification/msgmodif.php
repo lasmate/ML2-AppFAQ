@@ -4,6 +4,7 @@
 <?php include "../components/header.php"; ?>
 <link rel="stylesheet" href="../../style/main.css">
 <link rel="stylesheet" href="../../style/magicpatrnligue.css">
+
 <style>
         .form-container {
             background-color: rgba(255, 255, 255, 0.6);
@@ -50,44 +51,40 @@
 </style>
 </head>
 <body>
-<div class='parent'><div class="magicpattern"/>
-    <div class="flex-title"> FAQ Basket </div>
+<div  class="magicpattern">
+    <div class="flex-title"> FAQ Modification </div>
     <?php include "../components/navbarbis.php"; ?>
     <?php
-    // Process the form data if it's submitted
-    $question = '';
-    $description = '';
-    $answer = '';
-    if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['question'])) {
-        $question = htmlspecialchars($_POST['question']);
-        $description = htmlspecialchars($_POST['description']);
-        $answer = htmlspecialchars($_POST['answer']);
-    }
+        // Process the form data if it's submitted
+        $question = '';
+        $description = '';
+        $reponse = '';
+        if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['question'])) {
+            $question = htmlspecialchars($_POST['question']);
+            $reponse = htmlspecialchars($_POST['reponse']);
+        }
     ?>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Set the form values when page loads
         document.getElementById('question').value = "<?php echo $question; ?>";
-        document.getElementById('description').value = "<?php echo $description; ?>";
-        document.getElementById('answer').value = "<?php echo $answer; ?>";
+        document.getElementById('reponse').value = "<?php echo $reponse; ?>";
     });
     
     </script>
 
 
     <div class="form-container">
-        <form action="/submit_question" method="post">
+        <?php $form_action = "/submit_question"; ?>
+        <form action="<?php echo $form_action; ?>" method="post">
             <label for="question">Question:</label>
             <input type="text" id="question" name="question" required>
-            
-            <label for="description">Details:</label>
-            <textarea id="description" name="description" rows="4" required></textarea>
-            
-            <label for="answer">Réponce</label>
-            <textarea id="answer" name="answer" rows="4"></textarea>
+
+            <label for="reponse">reponse:</label>
+            <textarea id="reponse" name="reponse" rows="4"></textarea>
             
             <button type="submit">Valider</button>
-            <button type="button" onclick="document.getElementById('question').value=''; document.getElementById('details').value=''; document.getElementById('answer').value='';">Supprimer</button>
+            <button type="button" onclick="document.getElementById('question').value=''; document.getElementById('description').value=''; document.getElementById('reponse').value='';">Supprimer</button>
         </form>
     </div>
     <?php include '../components/footer.php';?></div> 

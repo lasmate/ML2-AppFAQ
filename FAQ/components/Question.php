@@ -71,9 +71,9 @@
     // )
     
 $IDQ = array_column($faqdata, 'id_Q');
-$IDfaq = array_column($faqdata, 'id_faq');
+$IDfaq = array_column($faqdata, 'id_FAQ');
 $questions = array_column($faqdata, 'question');
-$answers = array_column($faqdata, 'reponse');
+$reponses = array_column($faqdata, 'reponse');
 $Qdate = array_column($faqdata, 'dat_question');
 $Adate = array_column($faqdata, 'dat_reponse');
 $IDuser = array_column($faqdata, 'id_user');
@@ -82,17 +82,17 @@ for ($i = 0; $i < count($faqdata); $i++) {
     echo "<div class='flex-question'>";
     echo "<form class='question-form' action='FAQModification/msgmodif.php' method='post'>";
     echo "<div class='question'>" . htmlspecialchars($questions[$i], ENT_QUOTES) . "<br><span style='font-weight:150;font-size:0.9em;'>" . htmlspecialchars($Qdate[$i], ENT_QUOTES) . "</span></div>";
-    if (empty($answers[$i])) { // Gestion des erreurs s'il n'y a pas de réponse
-    if (empty($answers[$i])) {
-        echo "<input type='hidden' name='answer_message' value='Aucune réponse disponible.'>";
+    if (empty($reponses[$i])) { // Gestion des erreurs s'il n'y a pas de réponse
+    if (empty($reponses[$i])) {
+        echo "<input type='hidden' name='reponse_message' value='Aucune réponse disponible.'>";
     } else {
-        echo "<div class='answer'>" . htmlspecialchars($answers[$i], ENT_QUOTES) . "<br><span style='font-weight:150;font-size:0.7em;'>" . htmlspecialchars($Adate[$i], ENT_QUOTES) . "</span></div>";
+        echo "<div class='reponse'>" . htmlspecialchars($reponses[$i], ENT_QUOTES) . "<br><span style='font-weight:150;font-size:0.7em;'>" . htmlspecialchars($Adate[$i], ENT_QUOTES) . "</span></div>";
     }
 
     echo "<input type='hidden' name='IDquestion' value='" . htmlspecialchars($IDQ[$i], ENT_QUOTES) . "'>";// ID de la question
-  echo "<input type='hidden' name='question_id' value='" . htmlspecialchars($IDfaq[$i], ENT_QUOTES) . "'>"; // ID pour quelle ligue est la question
+    echo "<input type='hidden' name='question_id' value='" . htmlspecialchars($IDfaq[$i], ENT_QUOTES) . "'>"; // ID pour quelle ligue est la question
     echo "<input type='hidden' name='question' value='" . htmlspecialchars($questions[$i], ENT_QUOTES) . "'>";// question
-    echo "<input type='hidden' name='answer' value='" . htmlspecialchars($answers[$i], ENT_QUOTES) . "'>";// reponse
+    echo "<input type='hidden' name='reponse' value='" . htmlspecialchars($reponses[$i], ENT_QUOTES) . "'>";// reponse
     echo "<input type='hidden' name='id_user' value='" . htmlspecialchars($IDuser[$i], ENT_QUOTES) . "'>"; // ID de l'utilisateur
     echo "<input type='hidden' name='dat_question' value='" . htmlspecialchars($Qdate[$i], ENT_QUOTES) . "'>"; // date de la question
     echo "<input type='hidden' name='dat_reponse' value='" . htmlspecialchars($Adate[$i], ENT_QUOTES) . "'>"; // date de la réponse
@@ -120,7 +120,7 @@ echo "</div>";
         font-size: .8em;
     }
 
-    .description, .answer {
+    .description, .reponse {
         background-color: rgba(225, 225, 225, 0.6);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         border-radius: 8px;
@@ -134,7 +134,7 @@ echo "</div>";
         margin-top: 5px;
     }
 
-    .answer {
+    .reponse {
  
         margin-top: 1vh;
         margin-left: 20px;
