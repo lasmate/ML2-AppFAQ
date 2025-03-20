@@ -44,10 +44,10 @@ le projet sera divise en 5 etapes (+1 pour la recette)
         - [x] Insert
 4. Developpement Site Dynamique
     1. PHP
-        - [-] Account
-            - [-] Connection
-            - [-] Inscription
-            - [-] Déconnexion
+        - [x] Account
+            - [x] Connection
+            - [x] Inscription
+            - [x] Déconnexion
         - [-] FAQ
             - [x] Message List
             - [-] Ajouter une messages
