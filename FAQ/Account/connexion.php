@@ -18,7 +18,7 @@
     // Function to handle "remember me" functionality
     function handleRememberMe($conn, $user_id) {
         $token = bin2hex(random_bytes(32));
-        $tokenStmt = $conn->prepare("UPDATE users SET remember_token = ? WHERE id = ?");
+        $tokenStmt = $conn->prepare("UPDATE user SET remember_token = ? WHERE id = ?");
         $tokenStmt->execute([$token, $user_id]);
         setcookie("remember_token", $token, time() + (86400 * 30), "/");
         setcookie("user_id", $user_id, time() + (86400 * 30), "/");
@@ -45,14 +45,19 @@
             if ($user && $password === $user["mdp"]) {
                 // Login successful
                 $_SESSION["logged_in"] = true;
-                $_SESSION["user_id"] = $user["id_user"];
+                $_SESSION["id_user"] = $user["id_user"];
+                $_SESSION["id_ligue"] = $user["id_ligue"];
+                $_SESSION["usertype"] = $user["usertype"];
                 $_SESSION["username"] = $user["pseudo"];
+                
+                $_SESSION["success"] = "Vous êtes maintenant connecté.";
                 
                 // Handle "remember me" functionality
                 if ($remember) {
-                    handleRememberMe($conn, $user["id"]);
+                    handleRememberMe($conn, $user["id_user"]); // corrected to use the correct user ID
                 }
                 
+                $_SESSION["success"] = "Vous êtes maintenant connecté."; // added success message
                 header("Location: ../../index.php"); // Redirect after successful login
                 exit();
             } 
