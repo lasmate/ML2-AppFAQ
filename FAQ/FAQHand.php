@@ -6,6 +6,12 @@ if (!isset($_SESSION['id_user']) || empty($_SESSION['id_user'])) {
     // User is not logged in, redirect to login page
     header('Location: ../FAQ/Account/connexion.php');
     exit();
+}elseif(!isset($_SESSION['id_ligue']) || $_SESSION['id_ligue'] != 4){
+    // Display access denied message
+    echo '<div class="access-denied">Sorry, you do not have access to this page.</div>';
+    // Wait 5 seconds then redirect to index
+    header("Refresh: 5; URL=../index.php");
+    exit();
 }
 ?> 
 <!DOCTYPE html>
@@ -14,13 +20,7 @@ if (!isset($_SESSION['id_user']) || empty($_SESSION['id_user'])) {
 <?php include "components/header.php"; ?>
 <?php include "components/msglist.php"; ?>
 <?php 
-    // if(!isset($_SESSION['id_ligue']) || $_SESSION['id_ligue'] != 4){
-    //     // Display access denied message
-    //     echo '<div class="access-denied">Sorry, you do not have access to this page.</div>';
-    //     // Wait 5 seconds then redirect to index
-    //     header("Refresh: 5; URL=../index.php");
-    //     exit();
-    // }
+    
     $faqdata = fetchFAQ(4);
     $userdata = fetchUsers(); // corrected function name to maintain consistency
     $faqdata = replaceFaqUserIdWithPseudo($faqdata, $userdata);
@@ -30,7 +30,7 @@ if (!isset($_SESSION['id_user']) || empty($_SESSION['id_user'])) {
     <div class="flex-title"> FAQ Handball </div>
     <?php include "components/navbar.php"; ?>
     <div class="flex-page">
-        <div class="flex-menu"> trier
+        <div class="flex-menu">
             <div class="flex-container">
                 <span class="add-button" onclick="location.href='FAQModification/msgadd.php'"  ><span class="material-symbols-outlined">add</span></span>
             </div> 
