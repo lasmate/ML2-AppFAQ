@@ -1,15 +1,14 @@
-<?php
-session_start();
-include "components/session_handler.php";
-?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php include "components/header.php"; ?>
-<?php include "components/msglist.php"; ?>
-<?php 
-    
-    $faqdata = fetchFAQ(3);
+<?php
+    session_start();
+    const FAQ_ID = 3;
+    include "components/session_handler.php";
+    include "components/header.php"; 
+    include "components/msglist.php";
+    checkUserSessionAccess(FAQ_ID);
+    $faqdata = fetchFAQ(FAQ_ID);
     $userdata = fetchUsers(); // corrected function name to maintain consistency
     $faqdata = replaceFaqUserIdWithPseudo($faqdata, $userdata);
 ?>

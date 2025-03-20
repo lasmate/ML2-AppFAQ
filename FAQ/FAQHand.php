@@ -1,13 +1,14 @@
-<?php
-session_start();
-include "components/session_handler.php";
-?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php include "components/header.php"; ?>
-<?php include "components/msglist.php";
-    $faqdata = fetchFAQ(4);
+<?php 
+    session_start();
+    const FAQ_ID = 4;
+    include "components/session_handler.php";
+    include "components/header.php"; 
+    include "components/msglist.php";
+    checkUserSessionAccess(FAQ_ID);
+    $faqdata = fetchFAQ(FAQ_ID);
     $userdata = fetchUsers(); // corrected function name to maintain consistency
     $faqdata = replaceFaqUserIdWithPseudo($faqdata, $userdata);
 ?>
@@ -18,7 +19,7 @@ include "components/session_handler.php";
     <div class="flex-page">
         <div class="flex-menu">
             <div class="flex-container">
-                <span class="add-button" onclick="location.href='FAQModification/msgadd.php'"  ><span class="material-symbols-outlined">add</span></span>
+                <span class="add-button" onclick="location.href='FAQModification/msgadd.php'"><span class="material-symbols-outlined">add</span></span>
             </div> 
         </div>
         <div class="flex-content">
