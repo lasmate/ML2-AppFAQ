@@ -3,10 +3,10 @@
 
         $displayName = "non connecté";
         
-        if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
+        if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
             $displayName = htmlspecialchars($_SESSION['username']);
         } 
-        elseif (isset($_COOKIE['user_id'])) {
+        elseif (isset($_COOKIE['id_user'])) {
             // Get username from database using cookie ID
             $servername = "localhost";
             $username = "root";
@@ -16,7 +16,7 @@
             try {
                 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
                 $stmt = $conn->prepare("SELECT pseudo FROM users WHERE id = :id");
-                $stmt->bindParam(':id', $_COOKIE['user_id']);
+                $stmt->bindParam(':id', $_COOKIE['id_user']);
                 $stmt->execute();
                 
                 $result = $stmt->fetch(PDO::FETCH_ASSOC);
