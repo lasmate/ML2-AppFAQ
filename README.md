@@ -21,7 +21,7 @@ le projet sera divise en 5 etapes (+1 pour la recette)
             - [x] Connection
             - [x] Inscription
             - [x] Déconnexion
-        - [-] FAQ
+        - [x] FAQ
             - [x] FAQLigue1
             - [x] FAQLigue2
             - [x] FAQLigue3
@@ -63,4 +63,3 @@ le projet sera divise en 5 etapes (+1 pour la recette)
         - [ ] Documentation de l'application
         - [ ] Documentation de l'installation
         - [ ] Documentation de l'utilisation
-

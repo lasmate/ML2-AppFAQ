@@ -18,16 +18,13 @@ if ($conn->connect_error) {
  */
 function fetchFAQ($id_faq = null) {
     global $conn;
-    
     if ($id_faq !== null) {
         $sql = "SELECT * FROM faq WHERE id_faq = " . intval($id_faq);
     } else {
         $sql = "SELECT * FROM faq";
     }
     $result = $conn->query($sql);
-    
     $faqData = [];
-    
     if ($result) {
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
@@ -35,7 +32,6 @@ function fetchFAQ($id_faq = null) {
             }
         }
     }
-    
     return $faqData;
 }
 // Example usage:
@@ -49,17 +45,14 @@ $faqdata = fetchFAQ();       // Fetch all FAQs
  * @return array Array of user data
  */
 function fetchUsers($id_user = null) {
-    global $conn;
-    
+    global $conn; 
     if ($id_user !== null) {
         $sql = "SELECT * FROM user WHERE id_user = " . intval($id_user);
     } else {
         $sql = "SELECT * FROM user";
     }
     $result = $conn->query($sql);
-    
     $userData = [];
-    
     if ($result) {
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
@@ -67,7 +60,6 @@ function fetchUsers($id_user = null) {
             }
         }
     }
-    
     return $userData;
 }
 // Example usage:
@@ -81,24 +73,20 @@ $userData = fetchUsers();      // Fetch all users
  */
 function fetchLigues($id_ligue = null) {
     global $conn;
-    
     if ($id_ligue !== null) {
         $sql = "SELECT * FROM ligue WHERE id_ligue = " . intval($id_ligue);
     } else {
         $sql = "SELECT * FROM ligue";
     }
     $result = $conn->query($sql);
-    
     $ligueData = [];
-    
     if ($result) {
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $ligueData[] = $row;
             }
         }
-    }
-    
+    } 
     return $ligueData;
 }
 // Example usage:
@@ -135,14 +123,12 @@ function replaceFaqUserIdWithPseudo($faqData, $userData) {
     foreach ($userData as $user) {
         $userLookup[$user['id_user']] = $user['pseudo'];
     }
-    
     // Replace id_user with pseudo for each FAQ record
     foreach ($faqData as &$faq) {
         if (isset($faq['id_user']) && isset($userLookup[$faq['id_user']])) {
             $faq['id_user'] = $userLookup[$faq['id_user']];
         }
-    }
-    
+    } 
     return $faqData;
 }
 //  // Display the FAQ data as plaintext
@@ -156,14 +142,10 @@ function replaceFaqUserIdWithPseudo($faqData, $userData) {
 if (isset($faqdata)) {
     // Apply the replacement
     $faqdata = replaceFaqUserIdWithPseudo($faqdata, $userData);
-
     // Display the modified FAQ data
 //     echo "<h3>FAQ data with user pseudos:</h3>";
 //     displayArrayPlaintext($faqdata);
 // } else {
 //     echo "<p>No FAQ data available to modify.</p>";
  }
-
-
-
 ?>
