@@ -15,7 +15,6 @@ le projet sera divise en 5 etapes (+1 pour la recette)
 2. Modélisation
     1. [x] MLD (Model Logique de Donnees)
     2. [x] MDP (Modèle de Présentation)
-    3. Lotissement
 3. Developpement Site Statique
     1. HTML
         - [x] Compte
@@ -27,20 +26,18 @@ le projet sera divise en 5 etapes (+1 pour la recette)
             - [x] FAQLigue2
             - [x] FAQLigue3
             - [x] FAQLigue4
-            - [-] FAQmodif
-                - [x] Ajouter un message
-                - [x] Modifier un message
-                - [x] Supprimer un message
+        - [x] FAQmodif
+            - [x] Ajouter un message
+            - [x] Modifier un message
+            - [x] Supprimer un message
     2. CSS
-        - [x] Style general
+        - [x] Style de l'acceuil
         - [x] Style ds pages de connection/inscription/Déconnection
-        - [x] Style de la liste des messages
-    3. JS
-        - [-] Verification des champs de connection/inscription
-        - [-] Verification des champs de modification de message
-    4. SQL
+        - [x] Style des pages de FAQ
+        - [x] Style des pages de modification de message
+    3. SQL
         - [x] Creation de la base de donnees
-        - [-] Creation des tables
+        - [x] Creation des tables
         - [x] Insert
 4. Developpement Site Dynamique
     1. PHP
