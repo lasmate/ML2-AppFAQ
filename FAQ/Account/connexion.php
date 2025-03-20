@@ -37,7 +37,7 @@
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
             // Query to find user
-            $stmt = $conn->prepare("SELECT id_user, pseudo, mdp FROM user WHERE pseudo = :username");
+            $stmt = $conn->prepare("SELECT id_user, pseudo, mdp, id_ligue, id_usertype FROM user WHERE pseudo = :username"); // added id_ligue to the query
             $stmt->bindParam(':username', $username, PDO::PARAM_STR);
             $stmt->execute();
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -47,7 +47,7 @@
                 $_SESSION["logged_in"] = true;
                 $_SESSION["id_user"] = $user["id_user"];
                 $_SESSION["id_ligue"] = $user["id_ligue"];
-                $_SESSION["usertype"] = $user["usertype"];
+                $_SESSION["id_usertype"] = $user["id_usertype"];
                 $_SESSION["username"] = $user["pseudo"];
                 
                 $_SESSION["success"] = "Vous êtes maintenant connecté.";
