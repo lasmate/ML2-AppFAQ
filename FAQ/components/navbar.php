@@ -48,7 +48,7 @@
 
     // Generate links based on current file location
     switch ($currentFile) {
-        case 'index.php':
+        case 'index.php':// Home page
             echo '<script>
                 document.getElementById("home").onclick = function() { location.href="index.php"; };
                 document.getElementById("FAQBask").onclick = function() { location.href="FAQ/FAQBask.php"; };
@@ -60,7 +60,7 @@
                 document.getElementById("deconnexion").onclick = function() { location.href="FAQ/Account/deconnexion.php"; };
             </script>';
             break;
-        case in_array($currentFile, ['FAQBask.php', 'FAQFoot.php', 'FAQHand.php', 'FAQVolle.php']):
+        case in_array($currentFile, ['FAQBask.php', 'FAQFoot.php', 'FAQHand.php', 'FAQVolle.php']):// FAQ pages
             echo '<script>
                 document.getElementById("home").onclick = function() { location.href="../index.php"; };
                 document.getElementById("FAQBask").onclick = function() { location.href="FAQBask.php"; };
@@ -72,7 +72,7 @@
                 document.getElementById("deconnexion").onclick = function() { location.href="Account/deconnexion.php"; };
             </script>';
             break;
-        case in_array($currentFile, ['inscription.php', 'connexion.php', 'deconnexion.php']):
+        case in_array($currentFile, ['inscription.php', 'connexion.php', 'deconnexion.php']):// Account pages
             echo '<script>
                 document.getElementById("home").onclick = function() { location.href="../../index.php"; };
                 document.getElementById("FAQBask").onclick = function() { location.href="../FAQBask.php"; };
@@ -84,7 +84,7 @@
                 document.getElementById("deconnexion").onclick = function() { location.href="deconnexion.php"; };
             </script>';
             break;
-        case in_array($currentFile, ['AdminBask.php', 'AdminFoot.php', 'AdminHand.php', 'AdminVolle.php', 'AdminSup.php']):
+        case in_array($currentFile, ['AdminBask.php', 'AdminFoot.php', 'AdminHand.php', 'AdminVolle.php', 'AdminSup.php']):// Admin pages
             echo '<script>
                 document.getElementById("home").onclick = function() { location.href="../../index.php"; };
                 document.getElementById("FAQBask").onclick = function() { location.href="../FAQBask.php"; };
@@ -96,7 +96,7 @@
                 document.getElementById("deconnexion").onclick = function() { location.href="../Account/deconnexion.php"; };
             </script>';
             break;
-        case in_array($currentFile, ['msgadd.php', 'msgmod.php', 'msgdel.php']):
+        case in_array($currentFile, ['msgadd.php', 'msgmod.php', 'msgdel.php']):// Message pages
             echo '<script>
                 document.getElementById("home").onclick = function() { location.href="../../index.php"; };
                 document.getElementById("FAQBask").onclick = function() { location.href="../FAQBask.php"; };
@@ -108,7 +108,7 @@
                 document.getElementById("deconnexion").onclick = function() { location.href="../Account/deconnexion.php"; };
             </script>';
             break;
-        default:
+        default:// Default case
             echo '<script>
                 document.getElementById("home").onclick = function() { location.href="../../index.php"; };
                 document.getElementById("FAQBask").onclick = function() { location.href="../FAQBask.php"; };

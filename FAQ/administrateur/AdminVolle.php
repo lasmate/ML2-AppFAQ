@@ -1,37 +1,19 @@
-<?php
-session_start();
-
-// Check if user is logged in
-if (!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])) {
-    // User is not logged in, redirect to login page
-    header('Location: ../Account/connection.php');
-    exit();
-}
-else {
-    // User is logged in, check if he is a super admin
-    if ($_SESSION['usertype'] != '1'|| $_SESSION['usertype'] != '2') {
-        // User is not a super admin, redirect to home page
-        header('Location: ../../index.php');
-        exit();
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../style/main.css">
-    <link rel="stylesheet" href="../../style/magicpatrnhome.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
-    <title>Réponso'Ligue</title>
-    
+<?php
+    session_start();
+    const FAQ_ID = 3;
+    include "../components/session_handler.php";
+    include "../components/header.php"; 
+    include "../components/msglist.php";
+    checkUserSessionAccess(FAQ_ID);
+    $faqdata = fetchFAQ(FAQ_ID);
+    $userdata = fetchUsers();
+    $faqdata = replaceFaqUserIdWithPseudo($faqdata, $userdata);
+?>
 </head>
-
-<body>
-<div class='parent'><div class="magicpattern"/>
-    
+<body class="magicpattern">
     <div class="flex-container">
         <p class='flex-nav' style="text-align: center">nom prenom</p>
         <div class="flex-nav" onclick="location.href='index.php'"><span>Accueil</span></div>

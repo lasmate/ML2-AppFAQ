@@ -2,13 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/main.css">
-    <link rel="stylesheet" href="style/magicpatrnhome.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
-    <title>Réponso'Ligue</title>
+<?php
+    session_start();
+    const FAQ_ID = 0;
+    include "FAQ/components/session_handler.php"; 
+    include "FAQ/components/header.php";
+    include "FAQ/components/msglist.php"; 
+    $faqdata = fetchFAQ(FAQ_ID);
+    $userdata = fetchUsers(); 
     
+?>
 </head>
 
 <body>

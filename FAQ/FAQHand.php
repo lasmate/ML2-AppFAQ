@@ -9,7 +9,7 @@
     include "components/msglist.php";
     checkUserSessionAccess(FAQ_ID);
     $faqdata = fetchFAQ(FAQ_ID);
-    $userdata = fetchUsers(); // corrected function name to maintain consistency
+    $userdata = fetchUsers();
     $faqdata = replaceFaqUserIdWithPseudo($faqdata, $userdata);
 ?>
 </head>

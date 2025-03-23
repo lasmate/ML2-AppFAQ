@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php require_once "../components/header.php"; ?>
-<link rel="stylesheet" href="../../style/main.css">
-<link rel="stylesheet" href="../../style/magicpatrnligue.css">
-<link rel="stylesheet" href="../../style/account.css">
+<?php
+    session_start();
+    include "../components/session_handler.php"; 
+    include "../components/header.php";
+?>
 </head>
 <body class="magicpattern">
 <div class="flex-title">Déconnexion</div>
