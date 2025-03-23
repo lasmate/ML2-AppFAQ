@@ -53,7 +53,7 @@
 <body>
 <div  class="magicpattern">
     <div class="flex-title"> FAQ Modification </div>
-    <?php include "../components/navbarbis.php"; ?>
+    <?php include "../components/navbar.php"; ?>
     <?php
         // Process the form data if it's submitted
         $question = '';

@@ -42,14 +42,84 @@
         <div class="flex-nav-Column" id="connexion">Connexion</div>
         <div class="flex-nav-Column" id="deconnexion">Deconnexion</div>
     </div>
-    <script>
-        document.getElementById('home').onclick = function() { location.href='../index.php'; };
-        document.getElementById('FAQBask').onclick = function() { location.href='FAQBask.php'; };
-        document.getElementById('FAQFoot').onclick = function() { location.href='FAQFoot.php'; };
-        document.getElementById('FAQHand').onclick = function() { location.href='FAQHand.php'; };
-        document.getElementById('FAQVolle').onclick = function() { location.href='FAQVolle.php'; };
-        document.getElementById('inscription').onclick = function() { location.href='Account/inscription.php'; };
-        document.getElementById('connexion').onclick = function() { location.href='Account/connexion.php'; };
-        document.getElementById('deconnexion').onclick = function() { location.href='Account/deconnexion.php'; };
-    </script>
+    <?php
+    // Determine current file path for dynamic link generation
+    $currentFile = basename($_SERVER['PHP_SELF']);
+
+    // Generate links based on current file location
+    switch ($currentFile) {
+        case 'index.php':
+            echo '<script>
+                document.getElementById("home").onclick = function() { location.href="index.php"; };
+                document.getElementById("FAQBask").onclick = function() { location.href="FAQ/FAQBask.php"; };
+                document.getElementById("FAQFoot").onclick = function() { location.href="FAQ/FAQFoot.php"; };
+                document.getElementById("FAQHand").onclick = function() { location.href="FAQ/FAQHand.php"; };
+                document.getElementById("FAQVolle").onclick = function() { location.href="FAQ/FAQVolle.php"; };
+                document.getElementById("inscription").onclick = function() { location.href="FAQ/Account/inscription.php"; };
+                document.getElementById("connexion").onclick = function() { location.href="FAQ/Account/connexion.php"; };
+                document.getElementById("deconnexion").onclick = function() { location.href="FAQ/Account/deconnexion.php"; };
+            </script>';
+            break;
+        case in_array($currentFile, ['FAQBask.php', 'FAQFoot.php', 'FAQHand.php', 'FAQVolle.php']):
+            echo '<script>
+                document.getElementById("home").onclick = function() { location.href="../index.php"; };
+                document.getElementById("FAQBask").onclick = function() { location.href="FAQBask.php"; };
+                document.getElementById("FAQFoot").onclick = function() { location.href="FAQFoot.php"; };
+                document.getElementById("FAQHand").onclick = function() { location.href="FAQHand.php"; };
+                document.getElementById("FAQVolle").onclick = function() { location.href="FAQVolle.php"; };
+                document.getElementById("inscription").onclick = function() { location.href="Account/inscription.php"; };
+                document.getElementById("connexion").onclick = function() { location.href="Account/connexion.php"; };
+                document.getElementById("deconnexion").onclick = function() { location.href="Account/deconnexion.php"; };
+            </script>';
+            break;
+        case in_array($currentFile, ['inscription.php', 'connexion.php', 'deconnexion.php']):
+            echo '<script>
+                document.getElementById("home").onclick = function() { location.href="../../index.php"; };
+                document.getElementById("FAQBask").onclick = function() { location.href="../FAQBask.php"; };
+                document.getElementById("FAQFoot").onclick = function() { location.href="../FAQFoot.php"; };
+                document.getElementById("FAQHand").onclick = function() { location.href="../FAQHand.php"; };
+                document.getElementById("FAQVolle").onclick = function() { location.href="../FAQVolle.php"; };
+                document.getElementById("inscription").onclick = function() { location.href="inscription.php"; };
+                document.getElementById("connexion").onclick = function() { location.href="connexion.php"; };
+                document.getElementById("deconnexion").onclick = function() { location.href="deconnexion.php"; };
+            </script>';
+            break;
+        case in_array($currentFile, ['AdminBask.php', 'AdminFoot.php', 'AdminHand.php', 'AdminVolle.php', 'AdminSup.php']):
+            echo '<script>
+                document.getElementById("home").onclick = function() { location.href="../../index.php"; };
+                document.getElementById("FAQBask").onclick = function() { location.href="../FAQBask.php"; };
+                document.getElementById("FAQFoot").onclick = function() { location.href="../FAQFoot.php"; };
+                document.getElementById("FAQHand").onclick = function() { location.href="../FAQHand.php"; };
+                document.getElementById("FAQVolle").onclick = function() { location.href="../FAQVolle.php"; };
+                document.getElementById("inscription").onclick = function() { location.href="../Account/inscription.php"; };
+                document.getElementById("connexion").onclick = function() { location.href="../Account/connexion.php"; };
+                document.getElementById("deconnexion").onclick = function() { location.href="../Account/deconnexion.php"; };
+            </script>';
+            break;
+        case in_array($currentFile, ['msgadd.php', 'msgmod.php', 'msgdel.php']):
+            echo '<script>
+                document.getElementById("home").onclick = function() { location.href="../../index.php"; };
+                document.getElementById("FAQBask").onclick = function() { location.href="../FAQBask.php"; };
+                document.getElementById("FAQFoot").onclick = function() { location.href="../FAQFoot.php"; };
+                document.getElementById("FAQHand").onclick = function() { location.href="../FAQHand.php"; };
+                document.getElementById("FAQVolle").onclick = function() { location.href="../FAQVolle.php"; };
+                document.getElementById("inscription").onclick = function() { location.href="../Account/inscription.php"; };
+                document.getElementById("connexion").onclick = function() { location.href="../Account/connexion.php"; };
+                document.getElementById("deconnexion").onclick = function() { location.href="../Account/deconnexion.php"; };
+            </script>';
+            break;
+        default:
+            echo '<script>
+                document.getElementById("home").onclick = function() { location.href="../../index.php"; };
+                document.getElementById("FAQBask").onclick = function() { location.href="../FAQBask.php"; };
+                document.getElementById("FAQFoot").onclick = function() { location.href="../FAQFoot.php"; };
+                document.getElementById("FAQHand").onclick = function() { location.href="../FAQHand.php"; };
+                document.getElementById("FAQVolle").onclick = function() { location.href="../FAQVolle.php"; };
+                document.getElementById("inscription").onclick = function() { location.href="inscription.php"; };
+                document.getElementById("connexion").onclick = function() { location.href="connexion.php"; };
+                document.getElementById("deconnexion").onclick = function() { location.href="deconnexion.php"; };
+            </script>';
+            break;
+    }
+        ?>
 </div>

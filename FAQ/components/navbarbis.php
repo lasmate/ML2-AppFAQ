@@ -30,7 +30,6 @@
         
         echo "<p class='flex-nav' style='text-align: center'>" . $displayName . "</p>";
     ?>
-
     <div class="flex-nav" id="home">Accueil</div>
     <div class="flex-nav" id="FAQ"><p> FAQ </p>
         <div class="flex-nav-Column" id="FAQBask">Basket</div>

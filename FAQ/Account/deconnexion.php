@@ -8,7 +8,7 @@
 </head>
 <body class="magicpattern">
 <div class="flex-title">Déconnexion</div>
-<?php require_once "../components/navbarbis.php"; ?>
+<?php require_once "../components/navbar.php"; ?>
     <div class="flex-page">
     <div class="login-box">
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
