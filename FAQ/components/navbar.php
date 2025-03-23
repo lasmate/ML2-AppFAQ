@@ -30,18 +30,18 @@
         
         echo "<p class='flex-nav' style='text-align: center'>" . $displayName . "</p>";
     ?>
-        <div class="flex-nav" id="home">Accueil</div>
-        <div class="flex-nav" id="FAQ"><p> FAQ </p>
-            <div class="flex-nav-Column" id="FAQBask">Basket</div>
-            <div class="flex-nav-Column" id="FAQFoot">Football</div>
-            <div class="flex-nav-Column" id="FAQHand">Handball</div>
-            <div class="flex-nav-Column" id="FAQVolle">Volley</div>
-        </div>
-        <div class="flex-nav" id="Account"><p> Compte </p> 
-            <div class="flex-nav-Column" id="inscription">Inscription</div>
-            <div class="flex-nav-Column" id="connexion">Connexion</div>
-            <div class="flex-nav-Column" id="deconnexion">Deconnexion</div>
-        </div>
+    <div class="flex-nav" id="home">Accueil</div>
+    <div class="flex-nav" id="FAQ"><p> FAQ </p>
+        <div class="flex-nav-Column" id="FAQBask">Basket</div>
+        <div class="flex-nav-Column" id="FAQFoot">Football</div>
+        <div class="flex-nav-Column" id="FAQHand">Handball</div>
+        <div class="flex-nav-Column" id="FAQVolle">Volley</div>
+    </div>
+    <div class="flex-nav" id="Account"><p> Compte </p> 
+        <div class="flex-nav-Column" id="inscription">Inscription</div>
+        <div class="flex-nav-Column" id="connexion">Connexion</div>
+        <div class="flex-nav-Column" id="deconnexion">Deconnexion</div>
+    </div>
     <script>
         document.getElementById('home').onclick = function() { location.href='../index.php'; };
         document.getElementById('FAQBask').onclick = function() { location.href='FAQBask.php'; };
