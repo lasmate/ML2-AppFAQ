@@ -63,7 +63,9 @@ footer ul li:hover {
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 5vh;
-	z-index: -1;
+	top: 15vh;
+	
+    position: relative;
 }
 .flex-grid {
 	display: flex;
@@ -72,7 +74,7 @@ footer ul li:hover {
 	flex-wrap: wrap;
 	width: 90vw;
 	gap: 10px;
-	margin-top: 10vh;
+	
 }
 .flex-item {
 	background-size: cover;
@@ -103,13 +105,12 @@ footer ul li:hover {
 }
 
 .flex-container {
-	position: sticky;
+	position: relative;
 	display: flex;
 	align-items: flex-start;
-	height: 4vh;
+	height: 5vh;
 	flex-direction: row;
 	justify-content: flex-end;
-	z-index: 0;
 }
 .flex-nav {
 	display: inline-flex;

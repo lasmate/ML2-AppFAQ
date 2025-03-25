@@ -18,8 +18,6 @@
 <div class='parent'><div class="magicpattern"/>
     <div class="flex-title">Accueil</div>
     <?php include "FAQ/components/navbar.php"; ?>    
-    <div class="flex-container">
-   
     <div class="flex-landing">
         <div class="flex-grid">
             <div class="flex-item" style="background-image: url('media/basket.jpg');" onclick="location.href='FAQ/FAQBask.php'">
