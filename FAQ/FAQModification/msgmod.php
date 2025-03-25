@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php include "../components/header.php"; ?>
-<link rel="stylesheet" href="../../style/main.css">
-<link rel="stylesheet" href="../../style/magicpatrnligue.css">
+<?php
+    session_start();
+    include "../components/session_handler.php"; 
+    include "../components/header.php"; 
+    include "../components/msglist.php"; 
+    checkUserSessionAccess(FAQ_ID);
+    $faqdata = fetchFAQ(FAQ_ID);
+    $userdata = fetchUsers();
+    fetchMessage($_SESSION["id_Q"]);
+    $faqdata = replaceFaqUserIdWithPseudo($faqdata, $userdata);
+    ?>
 </head>
 <body>
 <div  class="magicpattern">
