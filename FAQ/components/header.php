@@ -19,8 +19,7 @@
             break;
         case in_array($currentFile, ['inscription.php', 'connexion.php', 'deconnexion.php']):// Account pages
             echo '<link rel="stylesheet" href="../../style/main.css">
-            <link rel="stylesheet" href="../../style/magicpatrnligue.css">
-            <link rel="stylesheet" href="../../style/account.css">';
+            <link rel="stylesheet" href="../../style/magicpatrnligue.css">';
             break;
         case in_array($currentFile, ['AdminBask.php', 'AdminFoot.php', 'AdminHand.php', 'AdminVolle.php', 'AdminSup.php']):// Admin pages
             echo '<link rel="stylesheet" href="../../style/main.css">

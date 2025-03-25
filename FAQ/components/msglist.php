@@ -109,8 +109,6 @@ function displayArrayPlaintext($faqData = []) {
     }
 }
 
-
-
 /**
  * Replace id_user with user pseudo in FAQ data
  * @param array $faqData Array of FAQ records
@@ -147,5 +145,43 @@ if (isset($faqdata)) {
 //     displayArrayPlaintext($faqdata);
 // } else {
 //     echo "<p>No FAQ data available to modify.</p>";
+}
+
+
+/**
+ * fetchs a message by ID
+ * @param int $id The ID of the message to fetch
+ * @return array The message data
+ * 
+ */
+function fetchMessage($id) {
+    global $conn;
+    $sql = "SELECT * FROM faq WHERE id_Q = " . intval($id);
+    $result = $conn->query($sql);
+    $messageData = [];
+    if ($result) {
+        if ($result->num_rows > 0) {
+            $messageData = $result->fetch_assoc();
+        }
+    }
+    return $messageData;
  }
+
+/**
+ * function to add a new message
+ * @param string $question The question to add
+ * @param int $id_user The ID of the user who asked the question
+ * @param int $id_FAQ The ID of the FAQ the question belongs to
+ * @return bool True if the message was added successfully, false otherwise
+ */
+function addMessage($question, $id_user, $id_FAQ) {
+    global $conn;
+    $sql = "INSERT INTO faq (question, id_user, id_FAQ) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sii", $question, $id_user, $id_FAQ);
+    $result = $stmt->execute();
+    return $result;
+}
+
+
 ?>
