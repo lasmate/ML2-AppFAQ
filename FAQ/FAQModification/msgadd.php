@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="../../style/main.css">
 <link rel="stylesheet" href="../../style/magicpatrnligue.css">
 <link rel="stylesheet" href="../../style/account.css">
-
 </head>
 <body class="magicpattern">
     <div class="flex-title"> FAQ Basket </div>

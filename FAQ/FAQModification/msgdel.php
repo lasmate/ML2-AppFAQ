@@ -8,7 +8,5 @@
 <body class="magicpattern">
     <div class="flex-title"> FAQ Basket </div>
     <?php require_once "../components/navbar.php"; ?>
-
-
 </body>
 </html>

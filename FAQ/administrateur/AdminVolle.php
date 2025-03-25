@@ -39,6 +39,5 @@
     <?php include "../components/Qlist.php"; ?>
 </div>
 <?php include '../../FAQ/components/footer.php'; ?>   
-
 </body>
 </html>
