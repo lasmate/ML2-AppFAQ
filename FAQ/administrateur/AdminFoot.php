@@ -11,23 +11,16 @@
     $faqdata = fetchFAQ(FAQ_ID);
     $userdata = fetchUsers();
     $faqdata = replaceFaqUserIdWithPseudo($faqdata, $userdata);
-    ?>
+?>
 </head>
-<bodyv class="magicpattern">
-    <div class="flex-container">
-        <p class='flex-nav' style="text-align: center">nom prenom</p>
-        <div class="flex-nav" onclick="location.href='index.php'"><span>Accueil</span></div>
-        <div class="flex-nav" id="Account">
-            <p>Compte</p>
-            <div class="flex-nav-Column" onclick="location.href='FAQ/Account/inscription.php'"><span>Inscription</span></div>
-            <div class="flex-nav-Column" onclick="location.href='FAQ/Account/connexion.php'"><span>Connexion</span></div>
-            <div class="flex-nav-Column" onclick="location.href='FAQ/Account/deconnexion.php'"><span>Déconnexion</span></div>
-        </div>
-    </div>
-    <div class="flex-landing">
-        <div class="flex-grid">
-            <div class="flex-item" style="background-image: url('../../media/foot.jpeg');" onclick="location.href='FAQ/FAQFoot.php'">
-                <div class="flex-title">
+<body class="magicpattern">
+    <div class="flex-title"> FAQ Football </div>
+    <?php include "../components/navbar.php"; ?>
+    <div class="flex-page">
+        <div class="flex-menu">
+            <div class="flex-container">
+                <div class="flex-item" style="background-image: url('../../media/foot.jpeg');" onclick="location.href='FAQFoot.php'">
+                    <div class="flex-title
                     Administration
                 </div>
                 <div style="height:100%;align-content: flex-end;">
@@ -38,7 +31,7 @@
     </div>
     <?php include "../components/Qlist.php"; ?>
 </div>
-<?php include '../../FAQ/components/footer.php'; ?>   
+<?php include '../components/footer.php'; ?>   
 
 </body>
 </html>

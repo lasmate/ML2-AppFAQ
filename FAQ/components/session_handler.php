@@ -13,16 +13,14 @@ function checkUserSessionAccess($FAQ_ID) {
         // Display access denied message
         echo '<div class="access-denied">Vous n\'avez pas accès à cette page.</div>';
         error_log("Access denied for user ID: " . $_SESSION['id_user'] . " at " . date('Y-m-d H:i:s'));
-        // Wait 3 seconds then redirect to index
-        sleep(3);
+
         header("Location: ../index.php");
         exit();
     } elseif ((!isset($_SESSION['id_ligue']) || ($_SESSION['id_ligue'] != $FAQ_ID) && $_SESSION['id_usertype'] != 1)) {
         // Display access denied message
         echo '<div class="access-denied">Vous n\'avez pas accès à cette page.</div>';
         error_log("Access denied for user ID: " . $_SESSION['id_user'] . " at " . date('Y-m-d H:i:s'));
-        // Wait 3 seconds then redirect to index
-        sleep(3);
+
         header("Location: ../index.php");
         exit();
     }
