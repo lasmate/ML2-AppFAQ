@@ -19,7 +19,7 @@
             <button type="submit">Submit</button></div>
         </form>
     </div>
-    <script src="../../script/validation.js"></script>
+
     <?php include_once '../components/footer.php'; ?>
 </body>
 </html>
