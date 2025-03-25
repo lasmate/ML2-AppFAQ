@@ -125,7 +125,6 @@ footer ul li:hover {
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 	cursor: pointer;
-	z-index: -1;
 }
 
 
@@ -135,19 +134,15 @@ footer ul li:hover {
 	justify-self: center;
 	color: #000000;
 	width: 100%;
-	z-index: -1;
 }
 .flex-nav:hover .flex-nav-Column {
 	display: flow-root;
-	z-index: -1;
 }
 .flex-nav:hover {
-	color: #ffffff;
-	z-index: -1;
+	color: #ffffff
 }
 .flex-nav-Column:hover {
 	color: #ffffff;
-	z-index: -1;
 }
 .flex-menu {
 	border-bottom: 2px solid #000000;
