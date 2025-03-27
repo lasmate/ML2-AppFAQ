@@ -94,47 +94,7 @@ $ligueData = fetchLigues();      // Fetch all ligues
 // $ligueData = fetchLigues(1);     // Fetch ligue with id_ligue = 1
 // $ligueData = fetchLigues(999);   // Fetch ligue with id_ligue = 999
 
-/**
- * Function to display FAQ data as plaintext
- * @param array $faqData The FAQ data array to display
- */
-function displayArrayPlaintext($faqData = []) { 
-    
-    if (!empty($faqData)) {
-        echo "<pre>";
-        print_r($faqData);
-        echo "</pre>";
-    } else {
-        echo "<p>No FAQ records found.</p>";
-    }
-}
 
-/**
- * Replace id_user with user pseudo in FAQ data
- * @param array $faqData Array of FAQ records
- * @param array $userData Array of user records
- * @return array Modified FAQ data
- */
-function replaceFaqUserIdWithPseudo($faqData, $userData) {
-    // Create a lookup array for quick access to user pseudos
-    $userLookup = [];
-    foreach ($userData as $user) {
-        $userLookup[$user['id_user']] = $user['pseudo'];
-    }
-    // Replace id_user with pseudo for each FAQ record
-    foreach ($faqData as &$faq) {
-        if (isset($faq['id_user']) && isset($userLookup[$faq['id_user']])) {
-            $faq['id_user'] = $userLookup[$faq['id_user']];
-        }
-    } 
-    return $faqData;
-}
-//  // Display the FAQ data as plaintext
-//  displayArrayPlaintext($faqdata);
-//  // Display the user data as plaintext
-//  displayArrayPlaintext($userData);
-//  // Display the ligue data as plaintext
-//  displayArrayPlaintext($ligueData);
 
 // Ensure that $faqdata is defined before applying the replacement
 if (isset($faqdata)) {
@@ -182,6 +142,79 @@ function addMessage($question, $id_user, $id_FAQ) {
     $result = $stmt->execute();
     return $result;
 }
+
+function delMessage($id_Q) {
+    global $conn;
+    $sql = "DELETE FROM faq WHERE id_Q = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id_Q);
+    $result = $stmt->execute();
+    return $result;
+}
+
+function modMessage($id_Q, $question) {
+    global $conn;
+    $sql = "UPDATE faq SET question = ? WHERE id_Q = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("si", $question, $id_Q);
+    $result = $stmt->execute();
+    return $result;
+}
+
+function ansMessage($id_Q, $reponse,) {//todo update to add the id of the user answering
+    global $conn;
+    $sql = "UPDATE faq SET reponse = ? WHERE id_Q = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("si", $reponse, $id_Q);
+    $result = $stmt->execute();
+    return $result;
+}
+
+
+
+
+/**
+ * Replace id_user with user pseudo in FAQ data
+ * @param array $faqData Array of FAQ records
+ * @param array $userData Array of user records
+ * @return array Modified FAQ data
+ */
+function replaceFaqUserIdWithPseudo($faqData, $userData) {
+    // Create a lookup array for quick access to user pseudos
+    $userLookup = [];
+    foreach ($userData as $user) {
+        $userLookup[$user['id_user']] = $user['pseudo'];
+    }
+    // Replace id_user with pseudo for each FAQ record
+    foreach ($faqData as &$faq) {
+        if (isset($faq['id_user']) && isset($userLookup[$faq['id_user']])) {
+            $faq['id_user'] = $userLookup[$faq['id_user']];
+        }
+    } 
+    return $faqData;
+}
+
+/**
+ * Function to display FAQ data as plaintext
+ * @param array $faqData The FAQ data array to display
+ */
+function displayArrayPlaintext($faqData = []) { 
+    
+    if (!empty($faqData)) {
+        echo "<pre>";
+        print_r($faqData);
+        echo "</pre>";
+    } else {
+        echo "<p>No FAQ records found.</p>";
+    }
+}
+
+//  // Display the FAQ data as plaintext
+//  displayArrayPlaintext($faqdata);
+//  // Display the user data as plaintext
+//  displayArrayPlaintext($userData);
+//  // Display the ligue data as plaintext
+//  displayArrayPlaintext($ligueData);
 
 
 ?>
