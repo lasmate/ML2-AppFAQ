@@ -92,7 +92,11 @@ for ($i = 0; $i < count($faqdata); $i++) {
     echo "<input type='hidden' name='IDquestion' value='" . htmlspecialchars($IDQ[$i], ENT_QUOTES) . "'>";// ID de la question
     echo "<input type='hidden' name='question_id' value='" . htmlspecialchars($IDfaq[$i], ENT_QUOTES) . "'>"; // ID pour quelle ligue est la question
     echo "<input type='hidden' name='question' value='" . htmlspecialchars($questions[$i], ENT_QUOTES) . "'>";// question
-    echo "<input type='hidden' name='reponse' value='" . htmlspecialchars($reponses[$i], ENT_QUOTES) . "'>";// reponse
+    if (!empty($reponses[$i])) {
+        echo "<input type='hidden' name='reponse' value='" . htmlspecialchars($reponses[$i], ENT_QUOTES) . "'>"; // reponse
+    } else {
+        echo "<input type='hidden' name='reponse' value='Aucune réponse disponible.'>"; // Default message for empty response
+    }
     echo "<input type='hidden' name='id_user' value='" . htmlspecialchars($IDuser[$i], ENT_QUOTES) . "'>"; // ID de l'utilisateur
     echo "<input type='hidden' name='dat_question' value='" . htmlspecialchars($Qdate[$i], ENT_QUOTES) . "'>"; // date de la question
     echo "<input type='hidden' name='dat_reponse' value='" . htmlspecialchars($Adate[$i], ENT_QUOTES) . "'>"; // date de la réponse
