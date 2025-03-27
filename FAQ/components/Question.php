@@ -98,6 +98,7 @@ for ($i = 0; $i < count($faqdata); $i++) {
     echo "<input type='hidden' name='dat_reponse' value='" . htmlspecialchars($Adate[$i], ENT_QUOTES) . "'>"; // date de la réponse
     
     echo "<button type='submit' class='button-add'>Repondre/Modifier</button>";
+    echo "<button type='button' class='button-add' onclick='window.location.href=\"FAQModification/msgdel.php?id=" . htmlspecialchars($IDQ[$i], ENT_QUOTES) . "\"'>Supprimer</button>";
     echo "</form>";
     echo "</div>";
 }
