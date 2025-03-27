@@ -70,20 +70,22 @@
 
 // )
     
-$IDQ = array_column($faqdata, 'id_Q');
-$IDfaq = array_column($faqdata, 'id_FAQ');
-$questions = array_column($faqdata, 'question');
-$reponses = array_column($faqdata, 'reponse');
-$Qdate = array_column($faqdata, 'dat_question');
-$Adate = array_column($faqdata, 'dat_reponse');
-$IDuser = array_column($faqdata, 'id_user');
+$IDQ = $IDfaq = $questions = $reponses = $Qdate = $Adate = $IDuser = [];
+foreach ($faqdata as $row) {
+    $IDQ[] = $row['id_Q'];
+    $IDfaq[] = $row['id_FAQ'];
+    $questions[] = $row['question'];
+    $reponses[] = $row['reponse'];
+    $Qdate[] = $row['dat_question'];
+    $Adate[] = $row['dat_reponse'];
+    $IDuser[] = $row['id_user'];
+}
 echo "<div>";
 for ($i = 0; $i < count($faqdata); $i++) {
     echo "<div class='flex-question'>";
-    echo "<form class='question-form' action='FAQModification/msgmod.php' method='post'>";
+    echo "<form class='question-form' method='post'>";
     echo "<div class='question'>" . htmlspecialchars($questions[$i], ENT_QUOTES) . "<br><span style='font-weight:150;font-size:0.9em;'>" . htmlspecialchars($Qdate[$i], ENT_QUOTES) . "</span></div>";
     if (empty($reponses[$i])) { // Gestion des erreurs s'il n'y a pas de réponse
-    if (empty($reponses[$i])) {
         echo "<input type='hidden' name='reponse_message' value='Aucune réponse disponible.'>";
     } else {
         echo "<div class='reponse'>" . htmlspecialchars($reponses[$i], ENT_QUOTES) . "<br><span style='font-weight:150;font-size:0.7em;'>" . htmlspecialchars($Adate[$i], ENT_QUOTES) . "</span></div>";
@@ -97,11 +99,32 @@ for ($i = 0; $i < count($faqdata); $i++) {
     echo "<input type='hidden' name='dat_question' value='" . htmlspecialchars($Qdate[$i], ENT_QUOTES) . "'>"; // date de la question
     echo "<input type='hidden' name='dat_reponse' value='" . htmlspecialchars($Adate[$i], ENT_QUOTES) . "'>"; // date de la réponse
     
-    echo "<button type='submit' class='button-add'>Repondre/Modifier</button>";
-    echo "<button type='button' class='button-add' onclick='window.location.href=\"FAQModification/msgdel.php?id=" . htmlspecialchars($IDQ[$i], ENT_QUOTES) . "\"'>Supprimer</button>";
+echo "<button type='button' class='button-add modify-button' data-id='" . htmlspecialchars($IDQ[$i], ENT_QUOTES) . "'>Repondre/Modifier</button>";
+    echo "<button type='button' class='button-add delete-button' data-id='" . htmlspecialchars($IDQ[$i], ENT_QUOTES) . "'>Supprimer</button>";
     echo "</form>";
     echo "</div>";
 }
 echo "</div>";
-}
 ?>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const deleteButtons = document.querySelectorAll('.delete-button');
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const id = this.getAttribute('data-id');
+                window.location.href = `FAQModification/msgdel.php?id=${id}`;
+            });
+        });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const modifyButtons = document.querySelectorAll('.modify-button');
+        modifyButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const id = this.getAttribute('data-id');
+                window.location.href = `FAQModification/msgmod.php?id=${id}`;
+            });
+        });
+    });
+</script>
