@@ -45,17 +45,7 @@
             <div class="table-container">
                 <h2>Gestion des utilisateurs</h2>
                 <table class="user-table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Pseudo</th>
-                            <th>Email</th>
-                            <th>Role</th>
-                            <th>Promotion</th>
-                            <th>Suppression</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                    <tbody >
                         <?php foreach($userdata as $user): ?>
                         <tr>
                             <td><?= $user['id_user'] ?></td>
@@ -68,6 +58,11 @@
                                     <button type="submit" class="btn-promote">Promouvoir</button>
                                 </form>
                             </td>
+                            <td>
+                                <form method="post" action="demote_user.php">
+                                    <input type="hidden" name="user_id" value="<?= $user['id'] ?>">
+                                    <button type="submit" class="btn-demote">Rétrograder</button>
+                                </form>
                             <td>
                                 <form method="post" action="delete_user.php" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur?');">
                                     <input type="hidden" name="user_id" value="<?= $user['id'] ?>">
