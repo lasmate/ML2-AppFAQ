@@ -3,9 +3,11 @@
 <head>
 <?php 
     session_start();
-    
+    include "../components/session_handler.php";
     include "../components/header.php";
     include "../components/msglist.php"; 
+    // checkUserSessionAccess($_SESSION['id_ligue']);
+    
     ?>
 </head>
 <body class="magicpattern">
