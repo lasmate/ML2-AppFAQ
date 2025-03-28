@@ -21,40 +21,64 @@
     </div>
     <div class="flex-landing">
             <div class="flex-item" style="background-image: url('../../media/basket.jpg');" onclick="location.href='FAQ/FAQBask.php'">
-            <div class="flex-title">
-                Administration
-            </div>
                 <div style="height:100%;align-content: flex-end;">
                     <h2>Ligue de basket</h2>
                 </div>
             </div>
             <div class="flex-item" style="background-image: url('../../media/foot.jpeg');" onclick="location.href='FAQ/FAQFoot.php'">
-            <div class="flex-title">
-                Administration
-            </div>
                 <div style="height:100%;align-content: flex-end;">
                     <h2>Ligue de Foot</h2>
                 </div>
             </div>
             <div class="flex-item" style="background-image: url('../../media/hand.jpg');" onclick="location.href='FAQ/FAQHand.php'">
-            <div class="flex-title">
-                Administration
-            </div>
                 <div style="height:100%;align-content: flex-end;">
                     <h2>Ligue de Handball</h2>
                 </div>
             </div>
             <div class="flex-item" style="background-image: url('../../media/volley.jpg');" onclick="location.href='FAQ/FAQVolle.php'">
-            <div class="flex-title">
-                Administration
-            </div>
                 <div style="height:100%;align-content: flex-end;">
                     <h2>Ligue de Volley</h2>
                 </div>
             </div>
         </div>
         <div class="flex-landing">
-            <p>yerhb</p>
+            <div class="table-container">
+                <h2>Gestion des utilisateurs</h2>
+                <table class="user-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Pseudo</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Promotion</th>
+                            <th>Suppression</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($userdata as $user): ?>
+                        <tr>
+                            <td><?= $user['id_user'] ?></td>
+                            <td><?= $user['pseudo'] ?></td>
+                            <td><?= $user['mail'] ?></td>
+                            <td><?= $user['id_usertype'] ?></td>
+                            <td>
+                                <form method="post" action="promote_user.php">
+                                    <input type="hidden" name="user_id" value="<?= $user['id'] ?>">
+                                    <button type="submit" class="btn-promote">Promouvoir</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form method="post" action="delete_user.php" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur?');">
+                                    <input type="hidden" name="user_id" value="<?= $user['id'] ?>">
+                                    <button type="submit" class="btn-delete">Supprimer</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
 </div>
 <?php include '../../FAQ/components/footer.php'; ?>   

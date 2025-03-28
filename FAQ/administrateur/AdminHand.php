@@ -19,8 +19,8 @@
     <div class="flex-page">
         <div class="flex-menu">
             <div class="flex-container">
-            <div class="flex-item" style="background-image: url('../../media/hand.jpg');" onclick="location.href='FAQ/FAQHand.php'">
-                <div class="flex-title">
+                <div class="flex-item" style="background-image: url('../../media/hand.jpg');" onclick="location.href='FAQ/FAQHand.php'">
+                    <div class="flex-title">
                     Administration
                 </div>
                 <div style="height:100%;align-content: flex-end;">

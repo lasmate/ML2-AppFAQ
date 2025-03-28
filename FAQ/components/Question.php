@@ -20,7 +20,6 @@ for ($i = 0; $i < count($faqdata); $i++) {
     } else {
         echo "<div class='reponse'>" . htmlspecialchars_decode($reponses[$i], ENT_QUOTES) . "<br><span style='font-weight:150;font-size:0.7em;'>" . htmlspecialchars($Adate[$i], ENT_QUOTES) . "</span></div>";
     }
-
     echo "<input type='hidden' name='IDquestion' value='" . htmlspecialchars($IDQ[$i], ENT_QUOTES) . "'>";// ID de la question
     echo "<input type='hidden' name='question_id' value='" . htmlspecialchars($IDfaq[$i], ENT_QUOTES) . "'>"; // ID pour quelle ligue est la question
     echo "<input type='hidden' name='id_user' value='" . htmlspecialchars($IDuser[$i], ENT_QUOTES) . "'>"; // ID de l'utilisateur
@@ -30,12 +29,12 @@ for ($i = 0; $i < count($faqdata); $i++) {
         echo "<button type='button' class='button-add modify-button' data-id='" . htmlspecialchars($IDQ[$i], ENT_QUOTES) . "'>Repondre/Modifier</button>";
         echo "<button type='button' class='button-add delete-button' data-id='" . htmlspecialchars($IDQ[$i], ENT_QUOTES) . "'>Supprimer</button>";
     }
-  
     echo "</form>";
     echo "</div>";
 }
 echo "</div>";
 ?>
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const deleteButtons = document.querySelectorAll('.delete-button');
