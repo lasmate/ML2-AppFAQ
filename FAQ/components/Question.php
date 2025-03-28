@@ -85,6 +85,7 @@ for ($i = 0; $i < count($faqdata); $i++) {
     echo "<div class='flex-question'>";
     echo "<form class='question-form' method='post'>";
     echo "<div class='question'>" . htmlspecialchars($questions[$i], ENT_QUOTES) . "<br><span style='font-weight:150;font-size:0.9em;'>" . htmlspecialchars($Qdate[$i], ENT_QUOTES) . "</span></div>";
+    echo "<p>Utilisateur : " . htmlspecialchars($IDuser[$i], ENT_QUOTES) . "</p>";
     if (empty($reponses[$i])) { // Gestion des erreurs s'il n'y a pas de réponse
         echo "<input type='hidden' name='reponse_message' value='Aucune réponse disponible.'>";
     } else {
