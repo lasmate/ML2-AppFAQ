@@ -14,8 +14,7 @@
     $faqdata = replaceFaqUserIdWithPseudo($faqdata, $userdata);
 ?>
 </head>
-<body>
-<div class="magicpattern"/>
+<body class="magicpattern">
     <div class="flex-container">
         <?php include "../components/navbar.php"; ?>
     </div>
@@ -54,18 +53,18 @@
                             <td><?= $user['id_usertype'] ?></td>
                             <td>
                                 <form method="post" action="promote_user.php">
-                                    <input type="hidden" name="user_id" value="<?= $user['id'] ?>">
+                                    <input type="hidden" name="user_id" value="<?= $user['id_user'] ?>">
                                     <button type="submit" class="btn-promote">Promouvoir</button>
                                 </form>
                             </td>
                             <td>
                                 <form method="post" action="demote_user.php">
-                                    <input type="hidden" name="user_id" value="<?= $user['id'] ?>">
+                                    <input type="hidden" name="user_id" value="<?= $user['id_user'] ?>">
                                     <button type="submit" class="btn-demote">Rétrograder</button>
                                 </form>
                             <td>
                                 <form method="post" action="delete_user.php" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur?');">
-                                    <input type="hidden" name="user_id" value="<?= $user['id'] ?>">
+                                    <input type="hidden" name="user_id" value="<?= $user['id_user'] ?>">
                                     <button type="submit" class="btn-delete">Supprimer</button>
                                 </form>
                             </td>
@@ -75,7 +74,7 @@
                 </table>
             </div>
         </div>
-</div>
+
 <?php include '../../FAQ/components/footer.php'; ?>   
 </body>
 </html>
