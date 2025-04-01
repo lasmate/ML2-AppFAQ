@@ -170,6 +170,33 @@ function ansMessage($id_Q, $reponse,) {//todo update to add the id of the user a
     return $result;
 }
 
+function delUser($id_user) {
+    global $conn;
+    $sql = "DELETE FROM user WHERE id_user = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id_user);
+    $result = $stmt->execute();
+    return $result;
+}
+function modUser($id_user) {
+    global $conn;
+    $id_usertype = 2; // Assuming 2 is the ID for the user type you want to set
+    $sql = "UPDATE user SET id_usertype = ? WHERE id_user = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ii", $id_usertype, $id_user);
+    $result = $stmt->execute();
+    return $result;
+}
+function demodUser($id_user) {
+    global $conn;
+    $id_usertype = 3; // Assuming 1 is the ID for the user type you want to set
+    $sql = "UPDATE user SET id_usertype = ? WHERE id_user = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ii", $id_usertype, $id_user);
+    $result = $stmt->execute();
+    return $result;
+}
+
 
 
 
