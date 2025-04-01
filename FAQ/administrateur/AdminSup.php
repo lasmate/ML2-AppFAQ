@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +11,28 @@
     $faqdata = fetchFAQ(FAQ_ID);
     $userdata = fetchUsers();
     $faqdata = replaceFaqUserIdWithPseudo($faqdata, $userdata);
+
+    // Handle form submissions directly on this page
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_POST['action']) && isset($_POST['user_id'])) {
+            $user_id = $_POST['user_id'];
+            switch ($_POST['action']) {
+                case 'promote':
+                    modUser($user_id);
+                    break;
+                case 'demote':
+                    demodUser($user_id);
+                    break;
+                case 'delete':
+                    if (isset($_POST['confirm_delete']) && $_POST['confirm_delete'] === 'yes') {
+                        delUser($user_id);
+                    }
+                    break;
+            }
+            // Refresh user data after action
+            $userdata = fetchUsers();
+        }
+    }
 ?>
 </head>
 <body class="magicpattern">
@@ -52,19 +73,23 @@
                             <td><?= $user['mail'] ?></td>
                             <td><?= $user['id_usertype'] ?></td>
                             <td>
-                                <form method="post" action="promote_user.php">
+                                <form method="post">
                                     <input type="hidden" name="user_id" value="<?= $user['id_user'] ?>">
+                                    <input type="hidden" name="action" value="promote">
                                     <button type="submit" class="btn-promote">Promouvoir</button>
                                 </form>
                             </td>
                             <td>
-                                <form method="post" action="demote_user.php">
+                                <form method="post">
                                     <input type="hidden" name="user_id" value="<?= $user['id_user'] ?>">
+                                    <input type="hidden" name="action" value="demote">
                                     <button type="submit" class="btn-demote">Rétrograder</button>
                                 </form>
                             <td>
-                                <form method="post" action="delete_user.php" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur?');">
+                                <form method="post" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur?');">
                                     <input type="hidden" name="user_id" value="<?= $user['id_user'] ?>">
+                                    <input type="hidden" name="action" value="delete">
+                                    <input type="hidden" name="confirm_delete" value="yes">
                                     <button type="submit" class="btn-delete">Supprimer</button>
                                 </form>
                             </td>
