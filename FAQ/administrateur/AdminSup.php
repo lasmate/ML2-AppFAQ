@@ -99,7 +99,7 @@
                 </table>
             </div>
         </div>
-</div>
+
 <?php include '../../FAQ/components/footer.php'; ?>   
 </body>
 </html>
