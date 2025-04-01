@@ -180,6 +180,11 @@ function delUser($id_user) {
 }
 function modUser($id_user) {
     global $conn;
+    // if (usertype($id_user) == 2) {
+    //     $id_usertype = 1; // Assuming 1 is the ID for the user type you want to set
+    // } else {
+    //     $id_usertype = 2; // Assuming 2 is the ID for the user type you want to set
+    // }
     $id_usertype = 2; // Assuming 2 is the ID for the user type you want to set
     $sql = "UPDATE user SET id_usertype = ? WHERE id_user = ?";
     $stmt = $conn->prepare($sql);
