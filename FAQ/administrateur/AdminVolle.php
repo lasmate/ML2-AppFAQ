@@ -18,7 +18,7 @@
     <div class="flex-page">
         <div class="flex-menu">
             <div class="flex-container">
-                <div class="flex-item" style="background-image: url('../../media/volley.jpg');" onclick="location.href='FAQ/FAQVolle.php'">
+                <div class="flex-item" style="background-image: url('../../media/volley.jpg');" >
                     <div class="flex-title">
                     Administrateur
                 </div>
