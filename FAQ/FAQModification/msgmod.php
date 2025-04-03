@@ -5,8 +5,9 @@
     session_start();
     include "../components/session_handler.php"; 
     include "../components/header.php"; 
+    checkUserSessionAccess($_SESSION['id_ligue']);
+
     $id_Q = isset($_GET['id']) ? $_GET['id'] : null;
-    checkUserSessionAccess($_SESSION('id_ligue'));
     $msgdata = fetchMessage($id_Q);
     ?>
 </head>
