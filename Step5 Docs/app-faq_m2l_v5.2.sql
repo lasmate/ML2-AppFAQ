@@ -35,18 +35,19 @@ CREATE TABLE `faq` (
   `dat_question` datetime NOT NULL DEFAULT current_timestamp(),
   `dat_reponse` datetime NOT NULL DEFAULT current_timestamp(),
   `id_user` bigint(11) NOT NULL
+  `id_user_R` bigint(11) DEFAULT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `faq`
 --
 
-INSERT INTO `faq` (`id_Q`, `id_FAQ`, `question`, `reponse`, `dat_question`, `dat_reponse`, `id_user`) VALUES
-(1, 1, 'Quand est-ce qu\'il est le prochain tournoi ? ', 'Le prochain tournoi est dans 3 semaines.', '2025-02-04 14:04:41', '2025-02-04 14:04:41', 3),
-(3, 3, 'Qu\'elle est l\'enjeux du prochain tournoi ?', 'L\'enjeux du prochain tournoi se sera les championnats de France.', '2025-02-04 14:09:41', '2025-02-04 14:09:41', 1),
-(4, 5, 'j\'aimerai savoir quand se passera le tournoi de basket', NULL, '2025-03-05 16:10:43', '2025-03-05 16:10:43', 1),
-(5, 2, 'combien de panier on ete marque pas le numero 6 cette saison? ', NULL, '2025-03-11 15:37:34', '2025-03-11 15:37:34', 3),
-(6, 2, 'OÃ¹ se trouve le tournoi ?', NULL, '2025-03-27 14:18:40', '2025-03-27 14:18:40', 10);
+INSERT INTO `faq` (`id_Q`, `id_FAQ`, `question`, `reponse`, `dat_question`, `dat_reponse`, `id_user`,`id_user_R`) VALUES
+(1, 1, 'Quand est-ce qu\'il est le prochain tournoi ? ', 'Le prochain tournoi est dans 3 semaines.', '2025-02-04 14:04:41', '2025-02-04 14:04:41', 3, NULL),
+(3, 3, 'Qu\'elle est l\'enjeux du prochain tournoi ?', 'L\'enjeux du prochain tournoi se sera les championnats de France.', '2025-02-04 14:09:41', '2025-02-04 14:09:41', 1, NULL),
+(4, 5, 'j\'aimerai savoir quand se passera le tournoi de basket', NULL, '2025-03-05 16:10:43', '2025-03-05 16:10:43', 1, NULL),
+(5, 2, 'combien de panier on ete marque pas le numero 6 cette saison? ', NULL, '2025-03-11 15:37:34', '2025-03-11 15:37:34', 3, NULL),
+(6, 2, 'OÃ¹ se trouve le tournoi ?', NULL, '2025-03-27 14:18:40', '2025-03-27 14:18:40', 10, NULL);
 
 -- --------------------------------------------------------
 

@@ -17,7 +17,8 @@ function checkUserSessionAccess($FAQ_ID) {
     // Determine access status based on conditions
     if (!isset($_SESSION['id_user']) || empty($_SESSION['id_user'])) {
         $accessStatus = 1; // Not logged in
-    } elseif (strpos($_SERVER['PHP_SELF'], "Admin") == true && $_SESSION['id_usertype'] > 2) {
+    } elseif ((strpos($_SERVER['PHP_SELF'], "Admin") !== false || strpos($_SERVER['PHP_SELF'], "del") !== false || strpos($_SERVER['PHP_SELF'], "mod") !== false) && 
+                $_SESSION['id_usertype'] > 2) {
         $accessStatus = 2; // Non admin user trying to access admin page
     } elseif ($FAQ_ID !== null && (!isset($_SESSION['id_ligue']) || (($_SESSION['id_ligue'] != $FAQ_ID) && $_SESSION['id_usertype'] != 1))) {
         $accessStatus = 3; // Not authorized for this FAQ
