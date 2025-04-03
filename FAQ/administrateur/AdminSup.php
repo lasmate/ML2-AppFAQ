@@ -3,12 +3,10 @@
 <head>
 <?php 
     session_start();
-    const FAQ_ID = 4;
-    //include "../components/session_handler.php";
+    include "../components/session_handler.php";
     include "../components/header.php"; 
-    include "../components/msglist.php";
     //checkUserSessionAccess(FAQ_ID);
-    $faqdata = fetchFAQ(FAQ_ID);
+    $faqdata = fetchFAQ(null);
     $userdata = fetchUsers();
     $faqdata = replaceFaqUserIdWithPseudo($faqdata, $userdata);
 
