@@ -152,11 +152,11 @@ function delMessage($id_Q) {
     return $result;
 }
 
-function modMessage($id_Q, $question) {
+function modMessage($id_Q, $question, $mots_cles) {
     global $conn;
-    $sql = "UPDATE faq SET question = ? WHERE id_Q = ?";
+    $sql = "UPDATE faq SET question = ?, mots_cles = ? WHERE id_Q = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("si", $question, $id_Q);
+    $stmt->bind_param("ssi", $question,$mots_cles,$id_Q);
     $result = $stmt->execute();
     return $result;
 }
