@@ -6,7 +6,6 @@
     const FAQ_ID = 3;
     include "../components/session_handler.php"; 
     include "../components/header.php"; 
-    include "../components/msglist.php"; 
     checkUserSessionAccess(FAQ_ID);
     $faqdata = fetchFAQ(FAQ_ID);
     $userdata = fetchUsers();
@@ -19,7 +18,7 @@
     <div class="flex-page">
         <div class="flex-menu">
             <div class="flex-container">
-                <div class="flex-item" style="background-image: url('../../media/volley.jpg');" onclick="location.href='FAQ/FAQVolle.php'">
+                <div class="flex-item" style="background-image: url('../../media/volley.jpg');" >
                     <div class="flex-title">
                     Administrateur
                 </div>

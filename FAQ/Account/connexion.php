@@ -6,7 +6,6 @@
     include "../components/session_handler.php"; 
     include "../components/header.php";
     
-
     // Database connection
     $servername = "localhost";
     $username = "root";

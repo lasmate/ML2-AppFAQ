@@ -7,7 +7,7 @@
     const FAQ_ID = 0;
     include "FAQ/components/session_handler.php"; 
     include "FAQ/components/header.php";
-    include "FAQ/components/msglist.php"; 
+    
     $faqdata = fetchFAQ(FAQ_ID);
     $userdata = fetchUsers(); 
     

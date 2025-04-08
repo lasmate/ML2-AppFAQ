@@ -3,9 +3,10 @@
 <head>
 <?php 
 session_start();
+
 include "../components/session_handler.php"; 
-require_once "../components/header.php"; 
-require_once '../components/msglist.php';
+include "../components/header.php"; 
+checkUserSessionAccess($_SESSION['id_ligue']);
 $id_Q = isset($_GET['id']) ? $_GET['id'] : null;
 $msgdata = fetchMessage($id_Q);
 ?>

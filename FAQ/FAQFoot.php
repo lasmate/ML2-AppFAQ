@@ -6,7 +6,6 @@
     const FAQ_ID = 1;
     include "components/session_handler.php"; 
     include "components/header.php"; 
-    include "components/msglist.php"; 
     checkUserSessionAccess(FAQ_ID);
     $faqdata = fetchFAQ(FAQ_ID);
     $userdata = fetchUsers();

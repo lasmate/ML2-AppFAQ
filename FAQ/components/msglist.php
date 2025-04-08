@@ -202,9 +202,6 @@ function demodUser($id_user) {
     return $result;
 }
 
-
-
-
 /**
  * Replace id_user with user pseudo in FAQ data
  * @param array $faqData Array of FAQ records
@@ -213,7 +210,7 @@ function demodUser($id_user) {
  */
 function replaceFaqUserIdWithPseudo($faqData, $userData) {
     // Create a lookup array for quick access to user pseudos
-    $userLookup = [];
+    $userLookup = [];//
     foreach ($userData as $user) {
         $userLookup[$user['id_user']] = $user['pseudo'];
     }

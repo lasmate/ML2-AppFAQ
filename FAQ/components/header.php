@@ -12,26 +12,33 @@
         case 'index.php':// Home page
             echo '<link rel="stylesheet" href="style/main.css">
             <link rel="stylesheet" href="style/magicpatrnhome.css">';
+            include "FAQ/components/msglist.php";
+
             break;
         case in_array($currentFile, ['FAQBask.php', 'FAQFoot.php', 'FAQHand.php', 'FAQVolle.php']):// FAQ pages
             echo '<link rel="stylesheet" href="../style/main.css">
             <link rel="stylesheet" href="../style/magicpatrnligue.css">';
+            include "components/msglist.php";
             break;
         case in_array($currentFile, ['inscription.php', 'connexion.php', 'deconnexion.php']):// Account pages
             echo '<link rel="stylesheet" href="../../style/main.css">
             <link rel="stylesheet" href="../../style/magicpatrnligue.css">';
+
             break;
         case in_array($currentFile, ['AdminBask.php', 'AdminFoot.php', 'AdminHand.php', 'AdminVolle.php', 'AdminSup.php']):// Admin pages
             echo '<link rel="stylesheet" href="../../style/main.css">
             <link rel="stylesheet" href="../../style/magicpatrnhome.css">';
+            include "../components/msglist.php"; 
             break;
         case in_array($currentFile, ['msgadd.php', 'msgmod.php', 'msgdel.php']):// Message pages
             echo '<link rel="stylesheet" href="../../style/main.css">
             <link rel="stylesheet" href="../../style/magicpatrnligue.css">';
+            include "../components/msglist.php"; 
             break;
         default:
             echo '<link rel="stylesheet" href="style/main.css">
             <link rel="stylesheet" href="style/magicpatrnligue.css">';
+            include "FAQ/components/msglist.php"; 
             break;
     }
     ?>
