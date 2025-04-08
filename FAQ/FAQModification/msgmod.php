@@ -21,10 +21,11 @@
         if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['question'])) {
             $question = htmlspecialchars($_POST['question']);
             $reponse = htmlspecialchars($_POST['reponse']);
+            $mots_cles = htmlspecialchars($_POST['mots_cles']);
             if (!empty($question) && !empty($reponse)) {
                 // Call the updateMessage function from msglist.php
                 if (function_exists('modMessage')) {
-                    modMessage($id_Q, $question);
+                    modMessage($id_Q, $question, $mots_cles);
                 } else {
                     echo "<p>Erreur: la fonction modMessage n'est pas définie.</p>";
                 }
@@ -45,11 +46,13 @@
             <label for="reponse">reponse:</label>
             <textarea id="reponse" name="reponse" rows="4"><?php echo isset($msgdata['reponse']) ? htmlspecialchars($msgdata['reponse']) : ''; ?></textarea>
             
+            <label for="mots-cles">Mots-cles</label>
+            <textarea id="mots_cles" name="mots_cles" rows="4"><?php echo isset($msgdata['mots_cles']) ? htmlspecialchars($msgdata['mots_cles']) : ''; ?></textarea>
+
             <button type="submit">Valider</button>
             <button type="reset">Annuler</button>
         </form>   
     </div>
     <?php include '../components/footer.php';?></div> 
 </body>
-
 </html>
