@@ -143,6 +143,11 @@ function addMessage($question, $id_user, $id_FAQ) {
     return $result;
 }
 
+/**
+ * function to delete a message
+ * @param int $id_Q The ID of the message to delete
+ * @return bool True if the message was deleted successfully, false otherwise
+ */
 function delMessage($id_Q) {
     global $conn;
     $sql = "DELETE FROM faq WHERE id_Q = ?";
@@ -152,6 +157,13 @@ function delMessage($id_Q) {
     return $result;
 }
 
+/**
+ * function to modify a message
+ * @param int $id_Q The ID of the message to modify
+ * @param string $question The new question
+ * @param string $mots_cles The new keywords
+ * @return bool True if the message was modified successfully, false otherwise
+ */
 function modMessage($id_Q, $question, $mots_cles) {
     global $conn;
     $sql = "UPDATE faq SET question = ?, mots_cles = ? WHERE id_Q = ?";
@@ -161,6 +173,12 @@ function modMessage($id_Q, $question, $mots_cles) {
     return $result;
 }
 
+/**
+ * function to answer a message
+ * @param int $id_Q The ID of the message to answer
+ * @param string $reponse The answer to the message
+ * @return bool True if the answer was added successfully, false otherwise
+ */
 function ansMessage($id_Q, $reponse,) {//todo update to add the id of the user answering
     global $conn;
     $sql = "UPDATE faq SET reponse = ? WHERE id_Q = ?";
@@ -184,6 +202,11 @@ function valMessage($id_Q){
     return $result;
 }
 
+/*
+ * function to delete a user
+ * @param int $id_user The ID of the user to delete
+ * @return bool True if the user was deleted successfully, false otherwise
+ */
 function delUser($id_user) {
     global $conn;
     $sql = "DELETE FROM user WHERE id_user = ?";
@@ -192,6 +215,13 @@ function delUser($id_user) {
     $result = $stmt->execute();
     return $result;
 }
+
+
+/**
+ * function to mod an user
+ * @param int $id_user The ID of the user to modify
+ * @return bool True if the user was modified successfully, false otherwise
+ */
 function modUser($id_user) {// usertype checking
     global $conn;
     // if (usertype($id_user) == 2) {
@@ -206,6 +236,12 @@ function modUser($id_user) {// usertype checking
     $result = $stmt->execute();
     return $result;
 }
+
+/**
+ * function to demod an user
+ * @param int $id_user The ID of the user to demod
+ * @return bool True if the user was demod successfully, false otherwise
+ */
 function demodUser($id_user) {
     global $conn;
     $id_usertype = 3; // Assuming 1 is the ID for the user type you want to set

@@ -4,7 +4,7 @@
 
 ## Description
 
-le projet sera divise en 5 etapes (+1 pour la recette)
+le projet sera divisé en 5 étapes (+1 pour la recette)
 
 1. Planification utilisant les éléments suivants
     1. [x] DCU ,MCD
@@ -25,7 +25,7 @@ le projet sera divise en 5 etapes (+1 pour la recette)
             - [x] Modifier un message
             - [x] Supprimer un message
     2. CSS
-        - [x] Style de l'acceuil
+        - [x] Style de l'accueil
         - [x] Style des pages de connection/inscription/Déconnection
         - [x] Style des pages de FAQ
         - [x] Style des pages de modification de message
@@ -58,3 +58,43 @@ le projet sera divise en 5 etapes (+1 pour la recette)
         - [ ] Documentation de l'application (En cours)
         - [ ] Documentation de l'installation (En cours)
         - [ ] Documentation de l'utilisation (En cours)
+
+
+
+
+## Installation
+1. Cloner le repository
+```bash
+git clone https://www.github.com/lasmate/ML2-AppFaq.git
+``` 
+2. Acceder au dossier
+```bash
+cd ML2-AppFaq
+```
+3. Lancer le serveur
+```bash
+xampp start
+```
+4. Acceder à l'application
+```bash
+http://localhost/htdocs/projects/ML2-AppFaq (Ensure this path matches your local server configuration)
+```
+
+
+## Goals Bonus
+
+- [ ] Ajouter une page de contact
+- [ ] Ajouter une page de mentions légales
+- [ ] Ajouter une page de politique de confidentialité
+- [ ] Ajouter une page de conditions générales d'utilisation
+- [ ] renforcer la sécurité de l'application
+        - [ ] utiliser un moyen de hachage sécurisé pour les mots de passe
+        - [ ] protéger les informations de connexion à la base de données
+        - [ ] donner aux utilisateur lambda un acces a SELECT uniquement
+        - [ ] donner aux utilisateur admin un acces a SELECT, INSERT, UPDATE, DELETE
+
+
+## Auteurs
+
+Lya Lasvenes 
+Raphael Tonon
