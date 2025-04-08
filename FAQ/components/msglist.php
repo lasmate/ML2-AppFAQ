@@ -170,6 +170,20 @@ function ansMessage($id_Q, $reponse,) {//todo update to add the id of the user a
     return $result;
 }
 
+/**
+ * fonction de validation de message
+ * @param int $id_Q  est l'id du message à valider
+ * @return bool true si la validation a réussi, false sinon
+ */
+function valMessage($id_Q){
+    global $conn;
+    $sql = "UPDATE faq SET valider = 1 WHERE id_Q = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id_Q);
+    $result = $stmt->execute();
+    return $result;
+}
+
 function delUser($id_user) {
     global $conn;
     $sql = "DELETE FROM user WHERE id_user = ?";
@@ -178,7 +192,7 @@ function delUser($id_user) {
     $result = $stmt->execute();
     return $result;
 }
-function modUser($id_user) {
+function modUser($id_user) {// usertype checking
     global $conn;
     // if (usertype($id_user) == 2) {
     //     $id_usertype = 1; // Assuming 1 is the ID for the user type you want to set
