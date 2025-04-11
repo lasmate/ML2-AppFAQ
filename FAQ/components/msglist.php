@@ -164,11 +164,11 @@ function delMessage($id_Q) {
  * @param string $mots_cles The new keywords
  * @return bool True if the message was modified successfully, false otherwise
  */
-function modMessage($id_Q, $question, $mots_cles) {
+function modMessage($id_Q, $question,$reponse, $mots_cles) {
     global $conn;
-    $sql = "UPDATE faq SET question = ?, mots_cles = ? WHERE id_Q = ?";
+    $sql = "UPDATE faq SET question = ?,reponse=?, mots_cles = ? WHERE id_Q = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssi", $question,$mots_cles,$id_Q);
+    $stmt->bind_param("sssi", $question,$reponse,$mots_cles,$id_Q);
     $result = $stmt->execute();
     return $result;
 }
@@ -263,11 +263,15 @@ function replaceFaqUserIdWithPseudo($faqData, $userData) {
     $userLookup = [];//
     foreach ($userData as $user) {
         $userLookup[$user['id_user']] = $user['pseudo'];
+
     }
     // Replace id_user with pseudo for each FAQ record
     foreach ($faqData as &$faq) {
         if (isset($faq['id_user']) && isset($userLookup[$faq['id_user']])) {
             $faq['id_user'] = $userLookup[$faq['id_user']];
+        }
+        if (isset($faq['id_user_R']) && isset($userLookup[$faq['id_user_R']])) {
+            $faq['id_user_R'] = $userLookup[$faq['id_user_R']];
         }
     } 
     return $faqData;

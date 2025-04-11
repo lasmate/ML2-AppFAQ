@@ -25,7 +25,7 @@
             if (!empty($question) && !empty($reponse)) {
                 // Call the updateMessage function from msglist.php
                 if (function_exists('modMessage')) {
-                    modMessage($id_Q, $question, $mots_cles);
+                    modMessage($id_Q, $question,$reponse, $mots_cles);
                 } else {
                     echo "<p>Erreur: la fonction modMessage n'est pas définie.</p>";
                 }

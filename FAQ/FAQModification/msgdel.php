@@ -3,10 +3,11 @@
 <head>
 <?php 
 session_start();
-
+const FAQ_ID = null;
 include "../components/session_handler.php"; 
 include "../components/header.php"; 
-checkUserSessionAccess($_SESSION['id_ligue']);
+checkUserSessionAccess(FAQ_ID);
+
 $id_Q = isset($_GET['id']) ? $_GET['id'] : null;
 $msgdata = fetchMessage($id_Q);
 ?>
