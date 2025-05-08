@@ -77,7 +77,7 @@ xampp start
 ```
 4. Acceder à l'application
 ```bash
-http://localhost/htdocs/projects/ML2-AppFaq (Ensure this path matches your local server configuration)
+http://localhost/htdocs/projects/ML2-AppFaq (assurez vous que vous utilise la meme structure de fichier)
 ```
 
 
