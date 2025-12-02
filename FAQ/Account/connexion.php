@@ -12,11 +12,14 @@
     $password = "";
     $dbname = "app-faq_m2l";
 
-    // Function to handle "remember me" functionality
     function handleRememberMe($conn, $user_id) {
         $token = bin2hex(random_bytes(32));
-        $tokenStmt = $conn->prepare("UPDATE user SET remember_token = ? WHERE id = ?");
-        $tokenStmt->execute([$token, $user_id]);
+        try {
+            $tokenStmt = $conn->prepare("UPDATE user SET remember_token = ? WHERE id_user = ?");
+            $tokenStmt->execute([$token, $user_id]);
+        } catch (PDOException $e) {
+            // Colonne inexistante 
+        }
         setcookie("remember_token", $token, time() + (86400 * 30), "/");
         setcookie("user_id", $user_id, time() + (86400 * 30), "/");
     }

@@ -1,22 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="flex-container">
     <?php
 
@@ -61,6 +42,12 @@
         <div class="flex-nav-Column" id="connexion">Connexion</div>
         <div class="flex-nav-Column" id="deconnexion">Deconnexion</div>
     </div>
+    <?php
+    // Show admin link when user has admin privileges (minimal change)
+    if (isset($_SESSION['id_usertype']) && $_SESSION['id_usertype'] == 1) {
+        echo '<div class="flex-nav" id="Admin"><p> Admin </p></div>';
+    }
+    ?>
     <?php
     // Determine current file path for dynamic link generation
     $currentFile = basename($_SERVER['PHP_SELF']);
@@ -140,5 +127,21 @@
             </script>';
             break;
     }
-        ?>
+        
+    // If admin link is present, set its onclick to the correct relative path
+    if (isset($_SESSION['id_usertype']) && $_SESSION['id_usertype'] == 1) {
+        // Determine admin path depending on current file context
+        $adminPath = '../administrateur/AdminSup.php';
+        if ($currentFile === 'index.php') {
+            $adminPath = 'FAQ/administrateur/AdminSup.php';
+        } elseif (in_array($currentFile, ['FAQBask.php', 'FAQFoot.php', 'FAQHand.php', 'FAQVolle.php'])) {
+            $adminPath = 'administrateur/AdminSup.php';
+        } elseif (in_array($currentFile, ['inscription.php', 'connexion.php', 'deconnexion.php'])) {
+            $adminPath = '../administrateur/AdminSup.php';
+        } elseif (in_array($currentFile, ['AdminBask.php', 'AdminFoot.php', 'AdminHand.php', 'AdminVolle.php', 'AdminSup.php'])) {
+            $adminPath = 'AdminSup.php';
+        }
+        echo '<script>var a=document.getElementById("Admin"); if(a) a.onclick=function(){ location.href="' . $adminPath . '"; };</script>';
+    }
+    ?>        
 </div>
