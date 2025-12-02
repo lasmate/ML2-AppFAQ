@@ -39,23 +39,23 @@
         <?php include "../components/navbar.php"; ?>
     </div>
     <div class="flex-landing">
-            <div class="flex-item" style="background-image: url('../../media/basket.jpg');" onclick="location.href='FAQ/FAQBask.php'">
-                <div style="height:100%;align-content: flex-end;">
+            <div class="flex-item" style="background-image: url('../../media/basket.jpg');height:80%;" onclick="location.href='../FAQBask.php'">
+                <div style="height:80%;align-content: flex-end;">
                     <h2>Ligue de basket</h2>
                 </div>
             </div>
-            <div class="flex-item" style="background-image: url('../../media/foot.jpeg');" onclick="location.href='FAQ/FAQFoot.php'">
-                <div style="height:100%;align-content: flex-end;">
+            <div class="flex-item" style="background-image: url('../../media/foot.jpeg');height:80%;" onclick="location.href='../FAQFoot.php'">
+                <div style="height:80%;align-content: flex-end;">
                     <h2>Ligue de Foot</h2>
                 </div>
             </div>
-            <div class="flex-item" style="background-image: url('../../media/hand.jpg');" onclick="location.href='FAQ/FAQHand.php'">
-                <div style="height:100%;align-content: flex-end;">
+            <div class="flex-item" style="background-image: url('../../media/hand.jpg');height:80%;" onclick="location.href='../FAQHand.php'">
+                <div style="height:80%;align-content: flex-end;">
                     <h2>Ligue de Handball</h2>
                 </div>
             </div>
-            <div class="flex-item" style="background-image: url('../../media/volley.jpg');" onclick="location.href='FAQ/FAQVolle.php'">
-                <div style="height:100%;align-content: flex-end;">
+            <div class="flex-item" style="background-image: url('../../media/volley.jpg');height:80%;" onclick="location.href='../FAQVolle.php'">
+                <div style="height:80%;align-content: flex-end;">
                     <h2>Ligue de Volley</h2>
                 </div>
             </div>
