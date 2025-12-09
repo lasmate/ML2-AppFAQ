@@ -24,7 +24,7 @@ for ($i = 0; $i < count($faqdata); $i++) {
             echo "<input type='hidden' name='reponse_message' value='Aucune réponse disponible.'>";
         } else {
             echo "<div class='reponse'>" . htmlspecialchars_decode($reponses[$i], ENT_QUOTES) . "<br><span style='font-weight:150;font-size:0.7em;'>" . htmlspecialchars($Adate[$i], ENT_QUOTES) . "</span>";
-            echo "<p>Répondu par : " . htmlspecialchars($IDuserR[$i], ENT_QUOTES) . "</p></div>";
+            echo "<p>Répondu par : " . htmlspecialchars($IDuser[$i], ENT_QUOTES) . "</p></div>";
         }
         echo "<input type='hidden' name='IDquestion' value='" . htmlspecialchars($IDQ[$i], ENT_QUOTES) . "'>";// ID de la question
         echo "<input type='hidden' name='question_id' value='" . htmlspecialchars($IDfaq[$i], ENT_QUOTES) . "'>"; // ID pour quelle ligue est la question
