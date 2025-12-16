@@ -41,6 +41,12 @@
         <div class="flex-nav-Column" id="inscription">Inscription</div>
         <div class="flex-nav-Column" id="connexion">Connexion</div>
         <div class="flex-nav-Column" id="deconnexion">Deconnexion</div>
+        <?php
+        // Show modification link only when a user is connected
+        if (isset($_SESSION['id_user']) && isset($_SESSION['username'])) {
+            echo '<div class="flex-nav-Column" id="modification">Modification</div>';
+        }
+        ?>
     </div>
     <?php
     // Show admin link when user has admin privileges (minimal change)
@@ -64,6 +70,7 @@
                 document.getElementById("inscription").onclick = function() { location.href="FAQ/Account/inscription.php"; };
                 document.getElementById("connexion").onclick = function() { location.href="FAQ/Account/connexion.php"; };
                 document.getElementById("deconnexion").onclick = function() { location.href="FAQ/Account/deconnexion.php"; };
+                var m = document.getElementById("modification"); if(m) m.onclick = function(){ location.href="FAQ/Account/modification.php"; };
             </script>';
             break;
         case in_array($currentFile, ['FAQBask.php', 'FAQFoot.php', 'FAQHand.php', 'FAQVolle.php']):// FAQ pages
@@ -76,6 +83,7 @@
                 document.getElementById("inscription").onclick = function() { location.href="Account/inscription.php"; };
                 document.getElementById("connexion").onclick = function() { location.href="Account/connexion.php"; };
                 document.getElementById("deconnexion").onclick = function() { location.href="Account/deconnexion.php"; };
+                var m = document.getElementById("modification"); if(m) m.onclick = function(){ location.href="Account/modification.php"; };
             </script>';
             break;
         case in_array($currentFile, ['inscription.php', 'connexion.php', 'deconnexion.php']):// Account pages
@@ -88,6 +96,7 @@
                 document.getElementById("inscription").onclick = function() { location.href="inscription.php"; };
                 document.getElementById("connexion").onclick = function() { location.href="connexion.php"; };
                 document.getElementById("deconnexion").onclick = function() { location.href="deconnexion.php"; };
+                var m = document.getElementById("modification"); if(m) m.onclick = function(){ location.href="modification.php"; };
             </script>';
             break;
         case in_array($currentFile, ['AdminBask.php', 'AdminFoot.php', 'AdminHand.php', 'AdminVolle.php', 'AdminSup.php']):// Admin pages
@@ -100,6 +109,7 @@
                 document.getElementById("inscription").onclick = function() { location.href="../Account/inscription.php"; };
                 document.getElementById("connexion").onclick = function() { location.href="../Account/connexion.php"; };
                 document.getElementById("deconnexion").onclick = function() { location.href="../Account/deconnexion.php"; };
+                var m = document.getElementById("modification"); if(m) m.onclick = function(){ location.href="../Account/modification.php"; };
             </script>';
             break;
         case in_array($currentFile, ['msgadd.php', 'msgmod.php', 'msgdel.php']):// Message pages
@@ -112,6 +122,7 @@
                 document.getElementById("inscription").onclick = function() { location.href="../Account/inscription.php"; };
                 document.getElementById("connexion").onclick = function() { location.href="../Account/connexion.php"; };
                 document.getElementById("deconnexion").onclick = function() { location.href="../Account/deconnexion.php"; };
+                var m = document.getElementById("modification"); if(m) m.onclick = function(){ location.href="../Account/modification.php"; };
             </script>';
             break;
         default:// Default case
@@ -124,6 +135,7 @@
                 document.getElementById("inscription").onclick = function() { location.href="inscription.php"; };
                 document.getElementById("connexion").onclick = function() { location.href="connexion.php"; };
                 document.getElementById("deconnexion").onclick = function() { location.href="deconnexion.php"; };
+                var m = document.getElementById("modification"); if(m) m.onclick = function(){ location.href="modification.php"; };
             </script>';
             break;
     }

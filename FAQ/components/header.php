@@ -20,9 +20,10 @@
             <link rel="stylesheet" href="../style/magicpatrnligue.css">';
             include "components/msglist.php";
             break;
-        case in_array($currentFile, ['inscription.php', 'connexion.php', 'deconnexion.php']):// Account pages
+        case in_array($currentFile, ['inscription.php', 'connexion.php', 'deconnexion.php', 'modification.php']):// Account pages
             echo '<link rel="stylesheet" href="../../style/main.css">
             <link rel="stylesheet" href="../../style/magicpatrnligue.css">';
+            include "../../FAQ/components/msglist.php";
 
             break;
         case in_array($currentFile, ['AdminBask.php', 'AdminFoot.php', 'AdminHand.php', 'AdminVolle.php', 'AdminSup.php']):// Admin pages

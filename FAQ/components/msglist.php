@@ -55,7 +55,7 @@ function fetchUsers($id_user = null) {
     $userData = [];
     if ($result) {
         if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
+            while ($row = $result->fetch_assoc()) {//
                 $userData[] = $row;
             }
         }
@@ -66,6 +66,20 @@ function fetchUsers($id_user = null) {
 $userData = fetchUsers();      // Fetch all users
 // $userData = fetchUsers(1);     // Fetch user with id_user = 1
 // $userData = fetchUsers(999);   // Fetch user with id_user = 999
+
+function fetchUserbyId($id_user) {
+    global $conn; 
+    $sql = "SELECT * FROM user WHERE id_user = " . ($id_user);
+    $result = $conn->query($sql);
+    $userData = [];
+    if ($result) {
+        if ($result->num_rows > 0) {
+            $userData = $result->fetch_assoc();
+        }
+    }
+    return $userData;
+}
+
 
 /**
  * Function to fetch ligue data by ID or all ligues if no ID is provided
